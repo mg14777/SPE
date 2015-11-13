@@ -1,21 +1,54 @@
+body {
+	font-family: "Segoe UI",Arial,sans-serif;
+}
 .main-page {
 	background-image: url(../image/potato_icon.png);
 	background-repeat: no-repeat;
 	background-size: 33% auto;
+	
+}
+.item {
 	background-color: #EAAC64;
 }
-
-
-
+.panel-heading{
+	color: black !important;
+	background-color: #EAAC64 !important;
+}
+.panel-title{
+	font-size: 40px!important;
+	font-family:serif;
+}
+.panel-collapse{
+	background-color: #EAAC64 !important;
+}
+.panel-body{
+	border:none!important;
+}
 .carousel-control {
+	position: absolute;
 	background-image: none !important;
+	top: initial;
+	bottom: initial;
+	bottom: 10%;
+}
+
+span.icon-prev,
+span.icon-next {
+	font-size: 90px !important;
+}
+
+.large-text{
+	font-size: 48px;
+	text-align: center;
 }
 
 .content{
 	margin: auto;
 	vertical-align: middle;
 	position: relative;
+	text-align: center;
 	top:35%;
+	height: 100%;
 }
 /*-------------------------
 	The clocks
