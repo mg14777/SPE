@@ -1,6 +1,26 @@
 body {
 	font-family: "Segoe UI",Arial,sans-serif;
 }
+table, th, td{
+	border: 1px solid black;
+	font-family: serif;
+} 
+table {
+	width: 100%
+}
+
+th{
+	font-size: 30px;
+	text-align: center;
+	background: #DFDFDF;
+}
+th td{
+	height:30px;
+}
+tr td:first-child{
+	text-align: center;
+	font-weight: 900;
+}
 .main-page {
 	background-image: url(../image/potato_icon.png);
 	background-repeat: no-repeat;
