@@ -11,7 +11,7 @@ function ajaxObject(){
     return xhttp;
 }
 
-function sendRequest(dataObject, type){
+function sendRequest(dataObject, type, screen){
     var json = JSON.stringify(dataObject);
     var xhttp = ajaxObject();
     var returnObject;
@@ -29,5 +29,5 @@ function sendRequest(dataObject, type){
 }
 
 function updateScreen(object){
-
+    //CRUD - Create/Read/Update/Delete
 }
