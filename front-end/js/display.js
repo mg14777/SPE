@@ -1,11 +1,16 @@
 /**
  * Created by Shike Feng on 07-Dec-15.
  */
+
+
+    /*
+    This is an example JSON string
+     */
 var data = {
-    currentRoom: "One",
+    currentRoom: "Two",
     room_info: [
         {
-            room_number: "One",
+            room_name: "One",
             meetings: [
                 {
                     "organizer": "Robert",
@@ -32,7 +37,7 @@ var data = {
             nextAvailable: 40
         },
         {
-            room_number: "Two",
+            room_name: "Two",
             meetings: [
                 {
                     "organizer": "Robert",
@@ -59,7 +64,7 @@ var data = {
             nextAvailable: 20
         },
         {
-            room_number: "Three",
+            room_name: "Three",
             meetings: [
                 {
                     "organizer": "Mudit",
@@ -83,7 +88,7 @@ var data = {
             availability: true
         },
         {
-            room_number: "Four",
+            room_name: "Four",
             meetings: [
                 {
                     "organizer": "Robert",
@@ -109,6 +114,20 @@ var data = {
     ]
 }
 
+/*
+ This function is used to get the availability state for the current room
+ */
+function getCurrentRoomAvailability(){
+    var currrentRoom = data.currentRoom;
+    var availability = null;
+    for (var i = 0; i < data.room_info.length; i++){
+        if (data.room_info[i].room_name == currrentRoom){
+            availability = data.room_info[i].availability;
+            break;
+        }
+    }
+    return availability;
+}
 
 
 function displaySchedule(room) {
@@ -138,12 +157,12 @@ function displayLeft(data){
     for (var a = 0; a< data.length; a++ ){
         room = data[a];
         html += header1;
-        html += 'id="title_'+room.room_number+'"';
+        html += 'id="title_'+room.room_name+'"';
         html += header2;
-        html += 'href="#collapse'+room.room_number+'">Room '+room.room_number+'</a><div id="next' + room.room_number+ '" class="nextAvailable"></div></h4>';
-        html += ' <div id="collapse'+room.room_number+'" class="panel-collapse collapse">';
-        var schedule = displaySchedule(room);
-        html += schedule;
+        html += 'href="#collapse'+room.room_name+'">Room '+room.room_name+'</a><div id="next' + room.room_name+ '" class="nextAvailable"></div></h4>';
+        html += ' <div id="collapse'+room.room_name+'" class="panel-collapse collapse">';
+
+        html += displaySchedule(room);
         html += headerEnd;
     }
     return html;
@@ -153,13 +172,13 @@ function mainPageInfo(data){
     var roomInfo;
     for (var i = 0; i < data.room_info.length; i++){
         roomInfo = data.room_info[i];
-        if (roomInfo.room_number == data.currentRoom){
+        if (roomInfo.room_name == data.currentRoom){
             break;
         }
     }
-    var html = '<div id="Room" style="float:left">';
+    var html = '<div id="Room">';
     var htmlEnd = '</div></div>';
-    html += 'ROOM '+roomInfo.room_number;
+    html += 'ROOM '+roomInfo.room_name;
     html += '<div class="meeting">';
     if (roomInfo.availability === false){
         html += '<div id="state">BOOKED</div>';

@@ -45,11 +45,16 @@
 
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
+            <!-- First interface -->
+            <!-- This interface displays the schedule for all meeting rooms-->
             <div class="item">
                 <header>Potato Calendar</header>
                  <div class="panel-group" id="accordion">
                 </div>
             </div>
+
+            <!-- Main interface -->
+            <!-- This interface displays the state for current meeting room-->
             <div class="item active main-page" >
                 
                 <!-- Set the second background image using inline CSS below. --> 
@@ -59,17 +64,13 @@
 
                 </div>       
             </div>
-            <div id="third" class="item">
-                 <!-- Set the third background image using inline CSS below. -->
 
-                    
+
+            <!-- Third interface-->
+            <div id="third" class="item">
+
             </div>
-                    
-                <!-- Set the third background image using inline CSS below. -->
-               
-            
-                    
-                <!-- Set the third background image using inline CSS below. -->
+
             </div>
         </div>
 
@@ -113,20 +114,26 @@
     });
     $(document).ready(function() {
         var mainPage = mainPageInfo(data);
-        $('#content').append(mainPage);
-        var markup = displayLeft(data.room_info);
+        var schedule = displayLeft(data.room_info);
         var currentRoom = '#collapse'+data.currentRoom;
-        $('#accordion').append(markup);
+        var currentRoomAvailability = getCurrentRoomAvailability();
+        $('#content').append(mainPage);
+        $('#accordion').append(schedule);
         $(currentRoom).collapse('show');
+        if (currentRoomAvailability === true) {
+            $('#Room').removeClass("occupied").addClass("available");
+        } else {
+            $('#Room').removeClass("available").addClass("occupied");
+        }
         for (var i = 0; i < data.room_info.length; i++){
             var room = data.room_info[i];
-            var titleName = '#title_'+room.room_number;
-            var lable = '#next'+room.room_number;
+            var titleName = '#title_'+room.room_name;
+            var lable = '#next'+room.room_name;
             if (room.availability === false){
-                $(titleName).addClass("occupied");
+                $(titleName).removeClass("available").addClass("occupied");
                 $(lable).text("Available in "+room.nextAvailable+" Minutes");
             } else {
-                $(titleName).addClass("available");
+                $(titleName).removeClass("occupied").addClass("available");
             }
         }
     });
