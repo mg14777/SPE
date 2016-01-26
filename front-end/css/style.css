@@ -121,11 +121,7 @@ span.next{
     font-size: 1em;
     font-family: "Quicksand";
     color: white;
-    padding-top: 140px;
-    padding-left: 40px;
-    padding-right: 40px;
-
-
+    margin-top: 2em;
 }
 #state {
     font-size: 2em;
@@ -166,13 +162,14 @@ ul li {
 table{
     border-collapse: collapse;
     width: 100%;
+    font-size: 2em;
 }
 th,tr,td{
     border : 1px solid black;
     text-align: center;
 }
 td{
-    width: 50%;
+    width: 33%;
 }
 .nextAvailable{
     float: right;
@@ -198,4 +195,7 @@ td{
 
 .flip-clock-wrapper{
 
+}
+.btn {
+    margin-top: 0em;
 }

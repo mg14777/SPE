@@ -27,7 +27,7 @@ var data = {
                 {
                     "organizer": "Robert",
                     "start_time": "16:00",
-                    "end_time": "18:00",
+                    "end_time": "21:00",
                     "meeting_level": "Second"
                 }
             ]
@@ -206,7 +206,7 @@ function mainPageInfo(data){
     if (roomInfo[0] == "False"){
         html += '<div id="state">BOOKED</div>';
         html += '<div id="level">Level : '+roomInfo[2]+'</div>';
-        html += '<div id="person">Organiser : '+roomInfo[1]+'</div>';
+        html += '<div id="person">Organizer : '+roomInfo[1]+'</div>';
         html += '<div id="clock" style="margin:2em;"></div><div class="message"></div>'
     } else {
         html += '<div id="state">AVAILABLE</div>';
