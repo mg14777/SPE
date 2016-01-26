@@ -21,7 +21,8 @@
 
     <!-- Custom CSS -->
     <link href="css/full-slider.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/flipclock.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -94,8 +95,10 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Script to Activate the Carousel -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
-        <!-- Script to implement the swipe functionality-->
+
+    <!-- Script to implement the swipe functionality-->
     <script src="js/jquery.swipe.js"></script>
+    <script src="js/flipclock.js"></script>
     <script src="js/display.js"></script>
     <script>
     $('.carousel').carousel({
@@ -115,27 +118,43 @@
     $(document).ready(function() {
         var mainPage = mainPageInfo(data);
         var schedule = displayLeft(data.room_info);
-        var currentRoom = '#collapse'+data.currentRoom;
-        var currentRoomAvailability = getCurrentRoomAvailability();
+        var currentRoomName = '#collapse'+data.currentRoom;
+        var currentRoomInfo = getCurrentRoomInfo();
+        var currentRoomAvailability = currentRoomInfo[0];
         $('#content').append(mainPage);
         $('#accordion').append(schedule);
-        $(currentRoom).collapse('show');
-        if (currentRoomAvailability === true) {
+        $(currentRoomName).collapse('show');
+        if (currentRoomAvailability == "True") {
             $('#Room').removeClass("occupied").addClass("available");
         } else {
             $('#Room').removeClass("available").addClass("occupied");
+            var clock;
+            clock = $("#clock").FlipClock({
+                clockFace: 'HourlyCounter',
+                autoStart: false,
+                callbacks: {
+                    stop: function() {
+                        $('.message').html('The clock has stopped!')
+                    }
+                }
+            });
+            clock.setTime(parseInt(currentRoomInfo[3]));
+            clock.setCountdown(true);
+            clock.start();
         }
         for (var i = 0; i < data.room_info.length; i++){
-            var room = data.room_info[i];
-            var titleName = '#title_'+room.room_name;
-            var lable = '#next'+room.room_name;
-            if (room.availability === false){
+            var roomInfo = getRoomInformation(i);
+            var roomName = data.room_info[i].room_name;
+            var titleName = '#title_'+ roomName;
+            //var lable = '#next'+ roomName;
+            if (roomInfo[0] == "False"){
                 $(titleName).removeClass("available").addClass("occupied");
-                $(lable).text("Available in "+room.nextAvailable+" Minutes");
+                //$(lable).text("Available in "+room.nextAvailable+" Minutes");
             } else {
                 $(titleName).removeClass("occupied").addClass("available");
             }
         }
+
     });
     </script>
 

@@ -7,7 +7,7 @@
     This is an example JSON string
      */
 var data = {
-    currentRoom: "Two",
+    currentRoom: "One",
     room_info: [
         {
             room_name: "One",
@@ -26,15 +26,12 @@ var data = {
                 },
                 {
                     "organizer": "Robert",
-                    "start_time": "14:00",
-                    "end_time": "16:00",
+                    "start_time": "16:00",
+                    "end_time": "18:00",
                     "meeting_level": "Second"
                 }
-            ],
-            availability: false,
-            currentMeetingOrganiser: "Robert",
-            currentMeetingLevel: "First",
-            nextAvailable: 40
+            ]
+
         },
         {
             room_name: "Two",
@@ -57,12 +54,10 @@ var data = {
                     "end_time": "15:00",
                     "meeting_level": "Second"
                 }
-            ],
-            availability: false,
-            currentMeetingOrganiser: "Mudit",
-            currentMeetingLevel: "First",
-            nextAvailable: 20
+            ]
+
         },
+
         {
             room_name: "Three",
             meetings: [
@@ -84,8 +79,7 @@ var data = {
                     "end_time": "15:00",
                     "meeting_level": "Second"
                 }
-            ],
-            availability: true
+            ]
         },
         {
             room_name: "Four",
@@ -108,28 +102,61 @@ var data = {
                     "end_time": "15:00",
                     "meeting_level": "Second"
                 }
-            ],
-            availability: true
+            ]
         }
     ]
-}
+};
 
 /*
  This function is used to get the availability state for the current room
  */
-function getCurrentRoomAvailability(){
-    var currrentRoom = data.currentRoom;
-    var availability = null;
-    for (var i = 0; i < data.room_info.length; i++){
-        if (data.room_info[i].room_name == currrentRoom){
-            availability = data.room_info[i].availability;
+function getRoom(roomName){
+    var info = data.room_info;
+    var index = null;
+    for (var i = 0; i<info.length; i++){
+        if (roomName == info[i].room_name){
+            index = i;
             break;
         }
     }
-    return availability;
+    return index;
 }
 
+function getRoomInformation(roomIndex){
+    var time = new Date();
+    var hour = time.getHours();
+    var minute = time.getMinutes();
+    var second = time.getSeconds();
+    var now = hour*60*60 + minute*60 + second;
+    var start = null;
+    var startTime = [];
+    var end = null;
+    var endTime = [];
+    var info = [];
+    info[0] = "True";
+    for (var i = 0; i < data.room_info[roomIndex].meetings.length; i++){
+        startTime = data.room_info[roomIndex].meetings[i].start_time.split(":");
+        endTime = data.room_info[roomIndex].meetings[i].end_time.split(":");
+        start = startTime[0]*60*60 + startTime[1]*60;
+        end = endTime[0]*60*60 + endTime[1]*60;
+        if (now < end && now > start){
+            info[0] = "False";
+            info[1] = data.room_info[roomIndex].meetings[i].organizer;
+            info[2] = data.room_info[roomIndex].meetings[i].meeting_level;
+            info[3] = end - now;
+            break;
+        }
+    }
+    return info;
+}
 
+function getCurrentRoomInfo(){
+    var currentRoom = data.currentRoom;
+    var roomIndex = getRoom(currentRoom);
+    return getRoomInformation(roomIndex);
+}
+
+// Display the schedule table
 function displaySchedule(room) {
     var meetings = room.meetings;
     var tableHeader = "<table><th>Time</th><th>Level</th><th>Organizer</th>";
@@ -160,7 +187,7 @@ function displayLeft(data){
         html += 'id="title_'+room.room_name+'"';
         html += header2;
         html += 'href="#collapse'+room.room_name+'">Room '+room.room_name+'</a><div id="next' + room.room_name+ '" class="nextAvailable"></div></h4>';
-        html += ' <div id="collapse'+room.room_name+'" class="panel-collapse collapse">';
+        html += '<div id="collapse'+room.room_name+'" class="panel-collapse collapse">';
 
         html += displaySchedule(room);
         html += headerEnd;
@@ -169,22 +196,18 @@ function displayLeft(data){
 }
 
 function mainPageInfo(data){
-    var roomInfo;
-    for (var i = 0; i < data.room_info.length; i++){
-        roomInfo = data.room_info[i];
-        if (roomInfo.room_name == data.currentRoom){
-            break;
-        }
-    }
+    var roomName = data.currentRoom;
+    var roomIndex = getRoom(roomName);
+    var roomInfo = getRoomInformation(roomIndex);
     var html = '<div id="Room">';
     var htmlEnd = '</div></div>';
-    html += 'ROOM '+roomInfo.room_name;
+    html += 'ROOM '+roomName;
     html += '<div class="meeting">';
-    if (roomInfo.availability === false){
+    if (roomInfo[0] == "False"){
         html += '<div id="state">BOOKED</div>';
-        html += '<div id="level">Level : '+roomInfo.currentMeetingLevel+'</div>';
-        html += '<div id="person">Organiser : '+roomInfo.currentMeetingOrganiser+'</div>';
-        html += '<div id="finishTime">Available in '+roomInfo.nextAvailable+' Minutes</div>';
+        html += '<div id="level">Level : '+roomInfo[2]+'</div>';
+        html += '<div id="person">Organiser : '+roomInfo[1]+'</div>';
+        html += '<div id="clock" style="margin:2em;"></div><div class="message"></div>'
     } else {
         html += '<div id="state">AVAILABLE</div>';
     }

@@ -107,6 +107,7 @@ span.next{
     position: relative;
     text-align: center;
     height: 80%;//30%;
+    color: white;
 }
 
 #Room {
@@ -166,7 +167,7 @@ table{
     border-collapse: collapse;
     width: 100%;
 }
-th, tr, td{
+th,tr,td{
     border : 1px solid black;
     text-align: center;
 }
@@ -193,4 +194,8 @@ td{
     -webkit-box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.85);
     -moz-box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.85);
     box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.85);
+}
+
+.flip-clock-wrapper{
+
 }
