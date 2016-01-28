@@ -4,10 +4,10 @@
 
 
     /*
-    This is an example JSON string
+    This is just an example JSON string
      */
+var currentRoomName = "One";
 var data = {
-    currentRoom: "One",
     room_info: [
         {
             room_name: "One",
@@ -20,18 +20,17 @@ var data = {
                 },
                 {
                     "organizer": "Mudit",
-                    "start_time": "13:00",
-                    "end_time": "13:30",
+                    "start_time": "12:00",
+                    "end_time": "12:30",
                     "meeting_level": "First"
                 },
                 {
                     "organizer": "Robert",
-                    "start_time": "16:00",
-                    "end_time": "21:00",
+                    "start_time": "14:30",
+                    "end_time": "18:00",
                     "meeting_level": "Second"
                 }
             ]
-
         },
         {
             room_name: "Two",
@@ -44,13 +43,13 @@ var data = {
                 },
                 {
                     "organizer": "Robert",
-                    "start_time": "12:00",
+                    "start_time": "13:00",
                     "end_time": "13:30",
                     "meeting_level": "First"
                 },
                 {
                     "organizer": "Robert",
-                    "start_time": "14:00",
+                    "start_time": "13:30",
                     "end_time": "15:00",
                     "meeting_level": "Second"
                 }
@@ -151,8 +150,7 @@ function getRoomInformation(roomIndex){
 }
 
 function getCurrentRoomInfo(){
-    var currentRoom = data.currentRoom;
-    var roomIndex = getRoom(currentRoom);
+    var roomIndex = getRoom(currentRoomName);
     return getRoomInformation(roomIndex);
 }
 
@@ -195,22 +193,23 @@ function displayLeft(data){
     return html;
 }
 
-function mainPageInfo(data){
-    var roomName = data.currentRoom;
-    var roomIndex = getRoom(roomName);
+function mainPageInfo(){
+    var roomIndex = getRoom(currentRoomName);
     var roomInfo = getRoomInformation(roomIndex);
     var html = '<div id="Room">';
-    var htmlEnd = '</div></div>';
-    html += 'ROOM '+roomName;
+    var htmlEnd = '</div>';
+    html += 'ROOM '+currentRoomName;
     html += '<div class="meeting">';
     if (roomInfo[0] == "False"){
         html += '<div id="state">BOOKED</div>';
         html += '<div id="level">Level : '+roomInfo[2]+'</div>';
         html += '<div id="person">Organizer : '+roomInfo[1]+'</div>';
-        html += '<div id="clock" style="margin:2em;"></div><div class="message"></div>'
+        html += '<div id="clock" style="margin:2em;"></div>';
     } else {
         html += '<div id="state">AVAILABLE</div>';
+        html += '<div id="clock" style="margin:3em;"></div>';
     }
+        html += htmlEnd;
         html += '<button type="button" class="btn btn-primary" onclick="window.location.href=\'#third\'">Book Now</button>';
         html += htmlEnd;
     return html;
