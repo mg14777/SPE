@@ -7,11 +7,10 @@
     This is just an example JSON string
      */
 var currentRoomName = "One";
-var data = {
-    room_info: [
+var data = [
         {
-            room_name: "One",
-            meetings: [
+            "room_name": "One",
+            "meetings": [
                 {
                     "organizer": "Robert",
                     "start_time": "10:00",
@@ -33,8 +32,8 @@ var data = {
             ]
         },
         {
-            room_name: "Two",
-            meetings: [
+            "room_name": "Two",
+            "meetings": [
                 {
                     "organizer": "Robert",
                     "start_time": "11:00",
@@ -49,17 +48,16 @@ var data = {
                 },
                 {
                     "organizer": "Robert",
-                    "start_time": "13:30",
-                    "end_time": "15:00",
+                    "start_time": "15:30",
+                    "end_time": "18:00",
                     "meeting_level": "Second"
                 }
             ]
 
         },
-
         {
-            room_name: "Three",
-            meetings: [
+            "room_name": "Three",
+            "meetings":[
                 {
                     "organizer": "Mudit",
                     "start_time": "10:00",
@@ -81,8 +79,8 @@ var data = {
             ]
         },
         {
-            room_name: "Four",
-            meetings: [
+            "room_name": "Four",
+            "meetings": [
                 {
                     "organizer": "Robert",
                     "start_time": "10:00",
@@ -103,17 +101,18 @@ var data = {
                 }
             ]
         }
-    ]
-};
+    ];
 
 /*
  This function is used to get the availability state for the current room
  */
+function setData(data){
+    this.data = data
+}
 function getRoom(roomName){
-    var info = data.room_info;
     var index = null;
-    for (var i = 0; i<info.length; i++){
-        if (roomName == info[i].room_name){
+    for (var i = 0; i<data.length; i++){
+        if (roomName == data[i].room_name){
             index = i;
             break;
         }
@@ -133,15 +132,15 @@ function getRoomInformation(roomIndex){
     var endTime = [];
     var info = [];
     info[0] = "True";
-    for (var i = 0; i < data.room_info[roomIndex].meetings.length; i++){
-        startTime = data.room_info[roomIndex].meetings[i].start_time.split(":");
-        endTime = data.room_info[roomIndex].meetings[i].end_time.split(":");
+    for (var i = 0; i < data[roomIndex].meetings.length; i++){
+        startTime = data[roomIndex].meetings[i].start_time.split(":");
+        endTime = data[roomIndex].meetings[i].end_time.split(":");
         start = startTime[0]*60*60 + startTime[1]*60;
         end = endTime[0]*60*60 + endTime[1]*60;
         if (now < end && now > start){
             info[0] = "False";
-            info[1] = data.room_info[roomIndex].meetings[i].organizer;
-            info[2] = data.room_info[roomIndex].meetings[i].meeting_level;
+            info[1] = data[roomIndex].meetings[i].organizer;
+            info[2] = data[roomIndex].meetings[i].meeting_level;
             info[3] = end - now;
             break;
         }

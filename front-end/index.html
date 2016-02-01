@@ -117,7 +117,7 @@
     });
     $(document).ready(function() {
         var mainPage = mainPageInfo(data);
-        var schedule = displayLeft(data.room_info);
+        var schedule = displayLeft(data);
         var currentRoom = '#collapse'+currentRoomName;
         var currentRoomInfo = getCurrentRoomInfo();
         var currentRoomAvailability = currentRoomInfo[0];
@@ -144,9 +144,9 @@
             clock.setCountdown(true);
             clock.start();
         }
-        for (var i = 0; i < data.room_info.length; i++){
+        for (var i = 0; i < data.length; i++){
             var roomInfo = getRoomInformation(i);
-            var roomName = data.room_info[i].room_name;
+            var roomName = data[i].room_name;
             var titleName = '#title_'+ roomName;
             if (roomInfo[0] == "False"){
                 $(titleName).removeClass("available").addClass("occupied");
