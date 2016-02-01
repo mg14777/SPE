@@ -39,12 +39,12 @@ header {
     -webkit-transition:.6s;
 //#EAAC64
 }
-.panel-heading:hover {
-    background-color: deepskyblue;
+/*.panel-heading:hover {
+    background-color: deepskyblue!important;
 //#0241e2;
     color: white;
 
-}
+}*/
 .panel-title{
     font-size: 30px;
     font-family:serif;
@@ -53,8 +53,7 @@ header {
 
 }
 .panel-collapse{
-    background-color: deepskyblue!important;
-//#EAAC64
+    background-color: #EAAC64!important;
 }
 .panel-body{
     font-size: 1.5em;
@@ -179,10 +178,10 @@ td{
     line-height: 20px;
 }
 .available {
-    background-color: #42F605;
+    background-color: #42F605!important;
 }
 .occupied {
-    background-color: rgb(245,7,7);
+    background-color: rgb(245,7,7)!important;
 }
 .btn{
     margin-top: 1.5em;
