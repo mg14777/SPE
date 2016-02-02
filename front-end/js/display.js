@@ -109,6 +109,10 @@ var data = [
 function setData(data){
     this.data = data
 }
+
+function updateData(){
+
+}
 function getRoom(roomName){
     var index = null;
     for (var i = 0; i<data.length; i++){
@@ -172,7 +176,7 @@ function displaySchedule(room) {
     return html;
 }
 
-function displayLeft(data){
+function displayAllRoomSchedule(data){
     var header1 = '<div class=\"panel panel-default\"><div class=\"panel-heading customise\"';
     var header2 = ' class="panel-title"><a data-toggle="collapse" data-parent="#accordion" ';
     var room;
@@ -203,14 +207,55 @@ function mainPageInfo(){
         html += '<div id="state">BOOKED</div>';
         html += '<div id="level">Level : '+roomInfo[2]+'</div>';
         html += '<div id="person">Organizer : '+roomInfo[1]+'</div>';
-        html += '<div id="clock" style="margin:2em;"></div>';
+        html += '<div id="clockForMainPage" style="margin:2em;"></div>';
     } else {
         html += '<div id="state">AVAILABLE</div>';
-        html += '<div id="clock" style="margin:3em;"></div>';
+        html += '<div id="clockForMainPage" style="margin:3em;"></div>';
     }
         html += htmlEnd;
         html += '<button type="button" class="btn btn-primary" onclick="window.location.href=\'#third\'">Book Now</button>';
         html += htmlEnd;
     return html;
 
+}
+
+function generateInfo(){
+    var mainPage = mainPageInfo(data);
+    var schedule = displayAllRoomSchedule(data);
+    var currentRoom = '#collapse'+currentRoomName;
+    var currentRoomInfo = getCurrentRoomInfo();
+    $('#content').append(mainPage);
+    $('#accordion').append(schedule);
+    $(currentRoom).collapse('show');
+    var clock;
+    if (currentRoomInfo[0] == "True") {
+        $('#Room').removeClass("occupied").addClass("available");
+        clock = $("#clock").FlipClock({
+            clockFace : 'TwentyFourHourClock'
+        });
+    } else {
+        $('#Room').removeClass("available").addClass("occupied");
+        clock = $("#clock").FlipClock({
+            clockFace: 'HourlyCounter',
+            autoStart: false,
+            callbacks: {
+                stop: function() {
+                    location.reload();
+                }
+            }
+        });
+        clock.setTime(parseInt(currentRoomInfo[3]));
+        clock.setCountdown(true);
+        clock.start();
+    }
+    for (var i = 0; i < data.length; i++){
+        var roomInfo = getRoomInformation(i);
+        var roomName = data[i].room_name;
+        var titleName = '#title_'+ roomName;
+        if (roomInfo[0] == "False"){
+            $(titleName).removeClass("available").addClass("occupied");
+        } else {
+            $(titleName).removeClass("occupied").addClass("available");
+        }
+    }
 }

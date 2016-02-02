@@ -164,7 +164,7 @@ var FlipClock;
 	 * FlipFlock Helper
 	 *
 	 * @param  object  A jQuery object or CSS select
-	 * @param  int     An integer used to start the clock (no. seconds)
+	 * @param  int     An integer used to start the clockForMainPage (no. seconds)
 	 * @param  object  An object of properties to override the default	
 	 */
 	 
@@ -335,7 +335,7 @@ var FlipClock;
 	FlipClock.Face = FlipClock.Base.extend({
 		
 		/**
-		 * Sets whether or not the clock should start upon instantiation
+		 * Sets whether or not the clockForMainPage should start upon instantiation
 		 */
 		 
 		autoStart: true,
@@ -373,7 +373,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Build the clock face
+		 * Build the clockForMainPage face
 		 */
 		 
 		build: function() {
@@ -442,7 +442,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Triggers when the clock is reset
+		 * Triggers when the clockForMainPage is reset
 		 */
 
 		reset: function() {
@@ -458,7 +458,7 @@ var FlipClock;
 		},
 
 		/**
-		 * Append a newly created list to the clock
+		 * Append a newly created list to the clockForMainPage
 		 */
 
 		appendDigitToClock: function(obj) {
@@ -466,7 +466,7 @@ var FlipClock;
 		},
 
 		/**
-		 * Add a digit to the clock face
+		 * Add a digit to the clockForMainPage face
 		 */
 		 
 		addDigit: function(digit) {
@@ -482,19 +482,19 @@ var FlipClock;
 		},
 		
 		/**
-		 * Triggers when the clock is started
+		 * Triggers when the clockForMainPage is started
 		 */
 		 
 		start: function() {},
 		
 		/**
-		 * Triggers when the time on the clock stops
+		 * Triggers when the time on the clockForMainPage stops
 		 */
 		 
 		stop: function() {},
 		
 		/**
-		 * Auto increments/decrements the value of the clock face
+		 * Auto increments/decrements the value of the clockForMainPage face
 		 */
 		 
 		autoIncrement: function() {
@@ -507,7 +507,7 @@ var FlipClock;
 		},
 
 		/**
-		 * Increments the value of the clock face
+		 * Increments the value of the clockForMainPage face
 		 */
 		 
 		increment: function() {
@@ -515,7 +515,7 @@ var FlipClock;
 		},
 
 		/**
-		 * Decrements the value of the clock face
+		 * Decrements the value of the clockForMainPage face
 		 */
 
 		decrement: function() {
@@ -528,7 +528,7 @@ var FlipClock;
 		},
 			
 		/**
-		 * Triggers when the numbers on the clock flip
+		 * Triggers when the numbers on the clockForMainPage flip
 		 */
 		 
 		flip: function(time, doNotAddPlayClass) {
@@ -569,12 +569,12 @@ var FlipClock;
 	"use strict";
 	
 	/**
-	 * The FlipClock Factory class is used to build the clock and manage
+	 * The FlipClock Factory class is used to build the clockForMainPage and manage
 	 * all the public methods.
 	 *
 	 * @param 	object  A jQuery object or CSS selector used to fetch
 	 				    the wrapping DOM nodes
-	 * @param 	mixed   This is the digit used to set the clock. If an 
+	 * @param 	mixed   This is the digit used to set the clockForMainPage. If an
 	 				    object is passed, 0 will be used.	
 	 * @param 	object  An object of properties to override the default	
 	 */
@@ -582,17 +582,17 @@ var FlipClock;
 	FlipClock.Factory = FlipClock.Base.extend({
 		
 		/**
-		 * The clock's animation rate.
+		 * The clockForMainPage's animation rate.
 		 * 
 		 * Note, currently this property doesn't do anything.
 		 * This property is here to be used in the future to
-		 * programmaticaly set the clock's animation speed
+		 * programmaticaly set the clockForMainPage's animation speed
 		 */		
 
 		animationRate: 1000,
 
 		/**
-		 * Auto start the clock on page load (True|False)
+		 * Auto start the clockForMainPage on page load (True|False)
 		 */	
 		 
 		autoStart: true,
@@ -616,30 +616,30 @@ var FlipClock;
 		 */		
 		 
 		classes: {
-			active: 'flip-clock-active',
-			before: 'flip-clock-before',
-			divider: 'flip-clock-divider',
-			dot: 'flip-clock-dot',
-			label: 'flip-clock-label',
+			active: 'flip-clockForMainPage-active',
+			before: 'flip-clockForMainPage-before',
+			divider: 'flip-clockForMainPage-divider',
+			dot: 'flip-clockForMainPage-dot',
+			label: 'flip-clockForMainPage-label',
 			flip: 'flip',
 			play: 'play',
-			wrapper: 'flip-clock-wrapper'
+			wrapper: 'flip-clockForMainPage-wrapper'
 		},
 		
 		/**
-		 * The name of the clock face class in use
+		 * The name of the clockForMainPage face class in use
 		 */	
 		 
 		clockFace: 'HourlyCounter',
 		 
 		/**
-		 * The name of the clock face class in use
+		 * The name of the clockForMainPage face class in use
 		 */	
 		 
 		countdown: false,
 		 
 		/**
-		 * The name of the default clock face class to use if the defined
+		 * The name of the default clockForMainPage face class to use if the defined
 		 * clockFace variable is not a valid FlipClock.Face object
 		 */	
 		 
@@ -676,19 +676,19 @@ var FlipClock;
 		language: 'english',
 		 
 		/**
-		 * The minimum digits the clock must have
+		 * The minimum digits the clockForMainPage must have
 		 */		
 
 		minimumDigits: 0,
 
 		/**
-		 * The original starting value of the clock. Used for the reset method.
+		 * The original starting value of the clockForMainPage. Used for the reset method.
 		 */		
 		 
 		original: false,
 		
 		/**
-		 * Is the clock running? (True|False)
+		 * Is the clockForMainPage running? (True|False)
 		 */		
 		 
 		running: false,
@@ -715,7 +715,7 @@ var FlipClock;
 		 * Constructor
 		 *
 		 * @param   object  The wrapping jQuery object
-		 * @param	object  Number of seconds used to start the clock
+		 * @param	object  Number of seconds used to start the clockForMainPage
 		 * @param	object 	An object override options
 		 */
 		 
@@ -843,7 +843,7 @@ var FlipClock;
 		 
 
 		/**
-		 * Starts the clock
+		 * Starts the clockForMainPage
 		 */
 		 
 		start: function(callback) {
@@ -865,7 +865,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Stops the clock
+		 * Stops the clockForMainPage
 		 */
 		 
 		stop: function(callback) {
@@ -880,7 +880,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Reset the clock
+		 * Reset the clockForMainPage
 		 */
 		 
 		reset: function(callback) {
@@ -889,7 +889,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Sets the clock time
+		 * Sets the clockForMainPage time
 		 */
 		 
 		setTime: function(time) {
@@ -898,7 +898,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Get the clock time
+		 * Get the clockForMainPage time
 		 *
 		 * @return  object  Returns a FlipClock.Time object
 		 */
@@ -923,7 +923,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Flip the digits on the clock
+		 * Flip the digits on the clockForMainPage
 		 *
 		 * @param  array  An array of digits	 
 		 */
@@ -955,7 +955,7 @@ var FlipClock;
 	 * node by passing a specific digit.
 	 *
 	 * @param 	object  A FlipClock.Factory object
-	 * @param 	mixed   This is the digit used to set the clock. If an 
+	 * @param 	mixed   This is the digit used to set the clockForMainPage. If an
 	 *				    object is passed, 0 will be used.	
 	 * @param 	object  An object of properties to override the default	
 	 */
@@ -973,8 +973,8 @@ var FlipClock;
 		 */		
 		 
 		classes: {
-			active: 'flip-clock-active',
-			before: 'flip-clock-before',
+			active: 'flip-clockForMainPage-active',
+			before: 'flip-clockForMainPage-before',
 			flip: 'flip'	
 		},
 				
@@ -1169,7 +1169,7 @@ var FlipClock;
 	/**
 	 * jQuery helper method
 	 *
-	 * @param  int     An integer used to start the clock (no. seconds)
+	 * @param  int     An integer used to start the clockForMainPage (no. seconds)
 	 * @param  object  An object of properties to override the default	
 	 */
 	 
@@ -1180,7 +1180,7 @@ var FlipClock;
 	/**
 	 * jQuery helper method
 	 *
-	 * @param  int     An integer used to start the clock (no. seconds)
+	 * @param  int     An integer used to start the clockForMainPage (no. seconds)
 	 * @param  object  An object of properties to override the default	
 	 */
 	 
@@ -1209,7 +1209,7 @@ var FlipClock;
 	 * calculations.
 	 *
 	 * @param 	object  A FlipClock.Factory object
-	 * @param 	mixed   This is the digit used to set the clock. If an 
+	 * @param 	mixed   This is the digit used to set the clockForMainPage. If an
 	 *				    object is passed, 0 will be used.	
 	 * @param 	object  An object of properties to override the default	
 	 */
@@ -1229,7 +1229,7 @@ var FlipClock;
 		factory: false,
 		
 		/**
-		 * The minimum number of digits the clock face must have
+		 * The minimum number of digits the clockForMainPage face must have
 		 */		
 		 
 		minimumDigits: 0,
@@ -1878,7 +1878,7 @@ var FlipClock;
 	/**
 	 * Twenty-Four Hour Clock Face
 	 *
-	 * This class will generate a twenty-four our clock for FlipClock.js
+	 * This class will generate a twenty-four our clockForMainPage for FlipClock.js
 	 *
 	 * @param  object  The parent FlipClock.Factory object
 	 * @param  object  An object of properties to override the default	
@@ -1898,9 +1898,9 @@ var FlipClock;
 		},
 
 		/**
-		 * Build the clock face
+		 * Build the clockForMainPage face
 		 *
-		 * @param  object  Pass the time that should be used to display on the clock.	
+		 * @param  object  Pass the time that should be used to display on the clockForMainPage.
 		 */
 		 
 		build: function(time) {
@@ -1931,7 +1931,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Flip the clock face
+		 * Flip the clockForMainPage face
 		 */
 		 
 		flip: function(time, doNotAddPlayClass) {
@@ -1951,7 +1951,7 @@ var FlipClock;
 	 * Counter Clock Face
 	 *
 	 * This class will generate a generice flip counter. The timer has been
-	 * disabled. clock.increment() and clock.decrement() have been added.
+	 * disabled. clockForMainPage.increment() and clockForMainPage.decrement() have been added.
 	 *
 	 * @param  object  The parent FlipClock.Factory object
 	 * @param  object  An object of properties to override the default	
@@ -1960,7 +1960,7 @@ var FlipClock;
 	FlipClock.CounterFace = FlipClock.Face.extend({
 		
 		/**
-		 * Tells the counter clock face if it should auto-increment
+		 * Tells the counter clockForMainPage face if it should auto-increment
 		 */
 
 		shouldAutoIncrement: false,
@@ -2009,7 +2009,7 @@ var FlipClock;
 		},
 
 		/**
-		 * Build the clock face	
+		 * Build the clockForMainPage face
 		 */
 		 
 		build: function() {
@@ -2034,7 +2034,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Flip the clock face
+		 * Flip the clockForMainPage face
 		 */
 		 
 		flip: function(time, doNotAddPlayClass) {			
@@ -2050,7 +2050,7 @@ var FlipClock;
 		},
 
 		/**
-		 * Reset the clock face
+		 * Reset the clockForMainPage face
 		 */
 
 		reset: function() {
@@ -2094,7 +2094,7 @@ var FlipClock;
 		},
 
 		/**
-		 * Build the clock face
+		 * Build the clockForMainPage face
 		 */
 
 		build: function(time) {
@@ -2126,7 +2126,7 @@ var FlipClock;
 		},
 
 		/**
-		 * Flip the clock face
+		 * Flip the clockForMainPage face
 		 */
 
 		flip: function(time, doNotAddPlayClass) {
@@ -2172,7 +2172,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Build the clock face
+		 * Build the clockForMainPage face
 		 */
 		
 		build: function(excludeHours, time) {
@@ -2198,7 +2198,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Flip the clock face
+		 * Flip the clockForMainPage face
 		 */
 		 
 		flip: function(time, doNotAddPlayClass) {
@@ -2212,7 +2212,7 @@ var FlipClock;
 		},
 
 		/**
-		 * Append a newly created list to the clock
+		 * Append a newly created list to the clockForMainPage
 		 */
 
 		appendDigitToClock: function(obj) {
@@ -2253,7 +2253,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Build the clock face	
+		 * Build the clockForMainPage face
 		 */
 		 
 		build: function() {
@@ -2261,7 +2261,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Flip the clock face
+		 * Flip the clockForMainPage face
 		 */
 		 
 		flip: function(time, doNotAddPlayClass) {
@@ -2280,7 +2280,7 @@ var FlipClock;
 	/**
 	 * Twelve Hour Clock Face
 	 *
-	 * This class will generate a twelve hour clock for FlipClock.js
+	 * This class will generate a twelve hour clockForMainPage for FlipClock.js
 	 *
 	 * @param  object  The parent FlipClock.Factory object
 	 * @param  object  An object of properties to override the default	
@@ -2301,9 +2301,9 @@ var FlipClock;
 		meridiumText: 'AM',
 					
 		/**
-		 * Build the clock face
+		 * Build the clockForMainPage face
 		 *
-		 * @param  object  Pass the time that should be used to display on the clock.	
+		 * @param  object  Pass the time that should be used to display on the clockForMainPage.
 		 */
 		 
 		build: function() {
@@ -2314,7 +2314,7 @@ var FlipClock;
 			this.base(time);			
 			this.meridiumText = this.getMeridium();			
 			this.meridium = $([
-				'<ul class="flip-clock-meridium">',
+				'<ul class="flip-clockForMainPage-meridium">',
 					'<li>',
 						'<a href="#">'+this.meridiumText+'</a>',
 					'</li>',
@@ -2325,7 +2325,7 @@ var FlipClock;
 		},
 		
 		/**
-		 * Flip the clock face
+		 * Flip the clockForMainPage face
 		 */
 		 
 		flip: function(time, doNotAddPlayClass) {			
