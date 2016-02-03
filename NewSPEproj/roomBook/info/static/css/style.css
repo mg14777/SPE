@@ -1,0 +1,201 @@
+body {
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+.main-page {
+
+
+}
+header {
+    background-color:black;
+    background-image: url(../image/potato_icon.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    color:white;
+    text-align:center;
+    padding:1px;
+    height: 10%;
+    font-size: 3em;
+    font-family: "Quicksand";
+}
+.IMG.potato {
+    display: block;
+    margin-right: auto
+}
+.item {
+    background-color: black;
+//#6534ff;
+//#E6D8B5;
+}
+.panel-group {
+    width: 100%;
+    float: right;
+}
+.panel-heading{
+    color: black ;
+    background-color: firebrick;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.6s;
+//#EAAC64
+}
+.panel-heading:hover {
+    background-color: deepskyblue;
+//#0241e2;
+    color: white;
+
+}
+.panel-title{
+    font-size: 30px;
+    font-family:serif;
+    font-family: "Quicksand";
+    font-weight: bold;
+
+}
+.panel-collapse{
+    background-color: deepskyblue!important;
+//#EAAC64
+}
+.panel-body{
+    font-size: 1.5em;
+    color: white;
+    font-family: "Quicksand";
+    font-weight: bold;
+    text-align: center;
+}
+.carousel-control {
+    position: absolute;
+    background-image: none !important;
+    top:auto;
+    bottom: initial;
+    bottom: 10%;
+    float: left;
+}
+
+span.icon-prev,
+span.icon-next {
+    font-size: 90px !important;
+}
+span.prev{
+    font-size: 0.3em;
+    vertical-align: middle;
+    font-family: "Quicksand";
+    color: white;
+    font-weight: bold;
+}
+span.next{
+    font-size: 0.4em;
+    font-family: "Quicksand";
+    color: white;
+}
+.large-text{
+    font-size: 48px;
+    text-align: center;
+}
+.potato {
+    background-image: url(../image/potato_icon.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin: auto;
+    vertical-align: middle;
+    position:relative;
+    height: 30%;
+}
+#content{
+//margin-top: 50px;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+    height: 80%;//30%;
+    color: white;
+}
+
+#Room {
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-size: 3em;
+    font-family: "Quicksand";
+}
+.meeting {
+    font-size: 1em;
+    font-family: "Quicksand";
+    color: white;
+    margin-top: 2em;
+}
+#state {
+    font-size: 2em;
+    font-family: "Exo";
+    color: white;
+    font-weight: bold;
+}
+.time {
+    font-size: 0.7em;
+}
+#finishTime {
+    font-size: 0.6em;
+}
+.nextTitle {
+    margin-top: 40px;
+    text-align: left;
+    font-size: 1.2em;
+//0.4em;
+    color: black;
+    font-family: "Quicksand";
+}
+.nextBooking {
+    text-align: left;
+    font-size: 1.2em;
+    color: white;
+    font-family: "Quicksand";
+}
+ul li {
+    padding: 4px 0px;
+}
+
+.date {
+    color: white;
+    font-size: 2em;
+    font-family: "Quicksand";
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 2em;
+}
+th,tr,td{
+    border : 1px solid black;
+    text-align: center;
+}
+td{
+    width: 33%;
+}
+.nextAvailable{
+    float: right;
+    color: black;
+    font-size : 20px;
+    vertical-align: middle;
+    line-height: 20px;
+}
+.available {
+    background-color: #42F605;
+}
+.occupied {
+    background-color: rgb(245,7,7);
+}
+.btn{
+    margin-top: 1.5em;
+    font-size: 40px;
+    padding: 0.5em 1em;
+    -webkit-box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.85);
+    -moz-box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.85);
+    box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.85);
+}
+
+.flip-clock-wrapper{
+
+}
+.btn {
+    margin-top: 0em;
+}
