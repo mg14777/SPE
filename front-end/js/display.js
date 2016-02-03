@@ -26,7 +26,7 @@ var data = [
                 {
                     "organizer": "Robert",
                     "start_time": "14:30",
-                    "end_time": "18:00",
+                    "end_time": "20:00",
                     "meeting_level": "Second"
                 }
             ]
@@ -109,6 +109,10 @@ var data = [
 function setData(data){
     this.data = data
 }
+
+function getData(){
+    return data
+}
 function getRoom(roomName){
     var index = null;
     for (var i = 0; i<data.length; i++){
@@ -172,7 +176,8 @@ function generateScheduleTable(room) {
     return html;
 }
 
-function displayAllRoomSchedule(data){
+function displayAllRoomSchedule(){
+    var data = getData();
     var header1 = '<div class=\"panel panel-default\"><div class=\"panel-heading customise\" data-toggle="collapse" data-parent="#accordion"';
     var header2 = ' class="panel-title"';
     var room;
@@ -185,7 +190,7 @@ function displayAllRoomSchedule(data){
         html += '">';
         html += '<h4 ';
         html += header2;
-        html += '> <a href="#collapse'+room.room_name+'">Room '+room.room_name+'</a><div class="bookButton"><a href="#third" class="btn btn-primary" >BOOK</a></div></h4></div>';
+        html += '> <a href="#collapse'+room.room_name+'">Room '+room.room_name+'</a><button class="btn btn-primary bookButton" >BOOK</button></h4></div>';
         html += '<div id="collapse'+room.room_name+'" class="panel-collapse collapse">';
 
         html += generateScheduleTable(room);
@@ -211,21 +216,20 @@ function mainPageInfo(){
         html += '<div id="clock" style="margin:3em;"></div>';
     }
         html += htmlEnd;
-        html += '<button type="button" class="btn btn-primary" onclick="window.location.href=\'#third\'">Book Now</button>';
+        html += '<button class="btn btn-primary ">Book Now</button>';
         html += htmlEnd;
     return html;
 }
 
 function generateInfo(){
     var mainPage = mainPageInfo(data);
-    var schedule = displayAllRoomSchedule(data);
+    var schedule = displayAllRoomSchedule();
     var currentRoom = '#collapse'+currentRoomName;
     var currentRoomInfo = getCurrentRoomInfo();
-    var currentRoomAvailability = currentRoomInfo[0];
     $('#content').html(mainPage);
     $('#accordion').html(schedule);
     $(currentRoom).collapse('show');
-    if (currentRoomAvailability == "True") {
+    if (currentRoomInfo[0] == "True") {
         $('#Room').removeClass("occupied").addClass("available");
         var clock = $("#clock").FlipClock({
             clockFace : 'TwentyFourHourClock'
@@ -245,6 +249,7 @@ function generateInfo(){
         clock.setCountdown(true);
         clock.start();
     }
+
     for (var i = 0; i < data.length; i++){
         var roomInfo = getRoomInformation(i);
         var roomName = data[i].room_name;

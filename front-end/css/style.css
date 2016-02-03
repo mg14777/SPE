@@ -184,5 +184,6 @@ a:hover, a:focus{
 #third{
     background-image: url("../image/autumn.jpg");
     background-repeat: no-repeat;
+    background-size: 100%;
 
 }

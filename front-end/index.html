@@ -49,7 +49,7 @@
             <!-- This interface displays the schedule for all meeting rooms-->
             <div id="first" class="item">
                 <header>Potato Calendar</header>
-                 <div class="panel-group" id="accordion">
+                <div class="panel-group" id="accordion">
 
                 </div>
             </div>
@@ -88,14 +88,13 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Script to Activate the Carousel -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
-
     <!-- Script to implement the swipe functionality-->
     <script src="js/jquery.swipe.js"></script>
+    <!-- Script to implement the count-down clock at the front page-->
     <script src="js/flipclock.js"></script>
     <script src="js/display.js"></script>
     <script>
@@ -103,8 +102,8 @@
         pause: true,
         interval: false //changes the speed
     });
-    $(document).ready(function() {  
-         $(".carousel-inner").swipe({
+    $(document).ready(function() {
+         var carousel = $(".carousel-inner").swipe({
             swipeLeft: function(event, direction, distance, duration, fingerCount){
                 $(this).parent().carousel('next');
             },
@@ -112,6 +111,12 @@
                 $(this).parent().carousel('prev');
             }
          });
+        $("#content").on("click", "button",function(event){
+            carousel.parent().carousel('next');
+        } );
+        $("#accordion").on("click", "button",function(event){
+            carousel.parent().carousel('prev');
+        })
     });
 
     $(document).ready(generateInfo());
