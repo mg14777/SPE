@@ -173,17 +173,19 @@ function generateScheduleTable(room) {
 }
 
 function displayAllRoomSchedule(data){
-    var header1 = '<div class=\"panel panel-default\"><div class=\"panel-heading customise\"';
-    var header2 = ' class="panel-title"><a data-toggle="collapse" data-parent="#accordion" ';
+    var header1 = '<div class=\"panel panel-default\"><div class=\"panel-heading customise\" data-toggle="collapse" data-parent="#accordion"';
+    var header2 = ' class="panel-title"';
     var room;
     var html = "";
     for (var a = 0; a< data.length; a++ ){
         room = data[a];
         html += header1;
-        html += ' id="title_'+room.room_name;
-        html += '"><h4 ';
+        html += 'data-target = "#collapse'+room.room_name;
+        html += '" id="title_'+room.room_name;
+        html += '">';
+        html += '<h4 ';
         html += header2;
-        html += 'href="#collapse'+room.room_name+'">Room '+room.room_name+'</a><div id="next' + room.room_name+ '" class="nextAvailable"></div></h4></div>';
+        html += '> <a href="#collapse'+room.room_name+'">Room '+room.room_name+'</a><div class="bookButton"><a href="#third" class="btn btn-primary" >BOOK</a></div></h4></div>';
         html += '<div id="collapse'+room.room_name+'" class="panel-collapse collapse">';
 
         html += generateScheduleTable(room);
