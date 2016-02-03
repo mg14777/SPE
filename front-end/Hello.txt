@@ -1,0 +1,109 @@
+<!--
+                 <!-- Set the third background image using inline CSS below. -->
+              <div class="panel panel-warning" style="height:88%; overflow-y:auto;">
+                    <div class="panel-heading " style="background:black"><font size="5">Please choose a date and time for your booking</font></div>
+                    <div class="panel-body" style="padding:0px;">
+                        <table class="table table-bordered" style="width:100%" style="height:50%; overflow-y:auto; padding:none;">
+							<thead>
+								<tr>
+									<th width="20%" padding="10px;" bgcolor=black><font size="4" style="right:2px;"  > 17/11/2015 </font><div style="float:right;"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="color:#5E5E60; font-size:20px;"></span></div></th>
+									<!--<th width="20px" padding="5px" bgcolor=black>--><th bgcolor=black><font size="4">Room 1</font></th>
+								</tr>
+							</thead>
+							<tr>
+								<td bgcolor="green" height="60px" align="left" width="40px">8:00</td>
+                                <!--///////////////-->
+								<td class = "container-fluid" width="90%" rowspan="10" bgcolor=black >
+                                    <h1 class="text-center">Booking form</h1><br>
+                                    <!--First row of the form-->
+                                    <div class="container" >
+                                        <form class="form-inline">
+                                            <div class="form-group">
+                                                <label >Book room from &nbsp;</label>
+                                                <input type="text" class="form-control" id="fromHour" placeholder="12.00">
+                                                <label> to </label>
+                                                <input type="text" class="form-control" id="toHour" placeholder="12.30">
+                                                <label></label>
+                                            </div>         
+                                        </form><br>
+                                        <!--Second row of the form-->
+                                        <form class="form-inline">
+                                            <div class="form-group">
+                                                <label syle="left:20px">Under the name &nbsp;</label>
+                                                <input type="text" class="form-control" id="personName" placeholder="Username">
+                                                <label> </label>
+                                                
+                                            </div>         
+                                        </form>
+                                        <br>
+                                        <!--Third row of the form-->
+                                        <form class="form-inline">
+                                            <div class="form-group">
+                                                <label >Meeting subject &nbsp;</label>
+                                                <input type="text" class="form-control" id="meeting">
+                                                <label></label>
+                                            </div>         
+                                        </form>
+                                    </div>
+                                </td>
+                                <!--///////////////-->
+							</tr>
+							<div style="position:relative; height:10%;">
+							<tr>
+								<td bgcolor="green" height="60px;" align="left">8:30</td>
+							</tr>
+							<tr>
+								<td bgcolor="firebrick" height="60px;" align="left">9:00</td>
+							</tr>
+							<tr>
+								<td bgcolor="green" height="60px;" align="left">9:30</td>
+							</tr>
+							<tr>
+								<td bgcolor="green" height="60px;" align="left">10:00</td>
+							</tr>
+							<tr>
+								<td bgcolor="green" height="60px;" align="left">10:30</td>
+							</tr>
+							<tr>
+								<td bgcolor="firebrick" height="60px;" align="left">11:00</td>
+							</tr>
+							<tr>
+								<td bgcolor="firebrick" height="60px;" align="left">11:30</td>
+							</tr>
+							<tr>
+								<td bgcolor="green" height="60px;" align="left">12:00</td>
+							</tr>
+							<tr>
+								<td bgcolor="firebrick" height="60px;" align="left">12:30</td>
+							</tr>
+							<tr>
+								<td bgcolor="green" height="60px;" align="left">13:00</td>
+							</tr>
+							<tr>
+								<td bgcolor="green" height="60px;" align="left">13:30</td>
+							</tr>
+							<tr>
+								<td bgcolor="green" height="60px;" align="left">14:00</td>
+							</tr>
+							<tr>
+								<td bgcolor="green" height="60px;" align="left">14:30</td>
+							</tr>
+							<tr>
+								<td bgcolor="green" height="60px;" align="left">15:00</td>
+							</tr>
+							<tr>
+								<td bgcolor="green" height="60px;" align="left">15:30</td>
+							</tr>
+							</div>
+						</table>
+                    </div>
+                    
+                </div>
+                    
+                <!-- Set the third background image using inline CSS below. -->
+               
+            
+                    
+                <!-- Set the third background image using inline CSS below. -->
+                
+-->

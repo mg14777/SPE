@@ -1,54 +1,496 @@
+
 body {
 	font-family: "Segoe UI",Arial,sans-serif;
 }
 .main-page {
-	background-image: url(../image/potato_icon.png);
-	background-repeat: no-repeat;
-	background-size: 33% auto;
+	
 	
 }
+header {
+    background-color:black;
+    background-image: url(../image/potato_icon.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    color:white;
+    text-align:center;
+    padding:1px;	
+    height: 10%;
+    font-size: 3em;
+    font-family: "Quicksand";
+}
+.IMG.potato {
+    display: block;
+    margin-left: ;
+    margin-right: auto
+}
 .item {
-	background-color: #EAAC64;
+	background-color: black;
+        //#6534ff;
+        //#E6D8B5;
+}
+.panel-group {
+    width: 100%;
+    float: right;
 }
 .panel-heading{
-	color: black !important;
-	background-color: #EAAC64 !important;
+	color: black ;
+	background-color: firebrick;   
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.6s;
+    //#EAAC64
+}
+.panel-heading:hover {
+    background-color: deepskyblue;
+        //#0241e2;
+    color: white;
+    
 }
 .panel-title{
-	font-size: 40px!important;
+	font-size: 30px;
 	font-family:serif;
+    font-family: "Quicksand";
+    font-weight: bold;
+    
 }
 .panel-collapse{
-	background-color: #EAAC64 !important;
+	background-color: deepskyblue!important;
+    //#EAAC64
 }
 .panel-body{
-	border:none!important;
+	border:!important;
+    font-size: 1.5em;
+    color: white;
+    font-family: "Quicksand";
+    font-weight: bold;
+    text-align: center;
 }
 .carousel-control {
 	position: absolute;
 	background-image: none !important;
-	top: initial;
+	top:auto;
 	bottom: initial;
 	bottom: 10%;
+    float: left;
 }
 
 span.icon-prev,
 span.icon-next {
 	font-size: 90px !important;
 }
-
+span.prev{
+    font-size: 0.3em;
+    vertical-align: middle;
+    font-family: "Quicksand";  
+    color: white;
+    font-weight: bold;
+}
+span.next{
+    font-size: 0.4em;
+    font-family: "Quicksand";  
+    color: white;
+}
 .large-text{
 	font-size: 48px;
 	text-align: center;
 }
-
+.potato {
+    background-image: url(../image/potato_icon.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin: auto;
+	vertical-align: middle;
+	position:relative;
+	height: 30%;
+}
 .content{
-	margin: auto;
+	//margin-top: 50px;
 	vertical-align: middle;
 	position: relative;
 	text-align: center;
-	top:35%;
-	height: 100%;
+	height: 80%;//30%;
+}
+.Room {
+     height: 100%;
+    width: 100%;
+    background-color: firebrick;
+        //#2C8C19;
+    color: white;
+    font-size: 3em;
+    font-family: "Quicksand"; 
+}
+.meeting {
+    font-size: 1em;
+    font-family: "Quicksand";  
+    color: white;
+    padding-top: 140px;
+    padding-left: 40px;
+    padding-right: 40px;
+    
+    
+}
+.title {
+    font-size: 2em;
+    font-family: "Exo";  
+    color: white;
+    font-weight: bold;
+}
+.time {
+    font-size: 0.7em;
+}
+.finishTime {
+    font-size: 0.6em;
+}
+.nextTitle {
+    margin-top: 40px;
+    text-align: left;
+    font-size: 1.2em;
+    //0.4em;
+    color: black;
+    font-family: "Quicksand";
+}
+.nextBooking {
+    text-align: left;
+    font-size: 1.2em;
+    color: white;
+    font-family: "Quicksand";
+}
+ul li { padding: 4px 0px; }
+.date {
+    color: white;
+    font-size: 2em;
+    font-family: "Quicksand";
+        
+}
+.thirdPage {
+    height: 100%;
+    width: 100%;
+    background-image: url(../image/autumn1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    font-size: 4em;
+    font-family: "Satisfy",serif;
+        //"Cinzel",serif;
+    text-align: center;
+    //font-weight: bold;
+    padding-top: 240px;
+    padding-left: 0px;
+}
+.item {
+    background-color: black;
+    color: white;
+}
+.time-div {
+    float: left;
+    width: 25%;
+    height: 100%;
+    overflow-y: auto;
+    font-family: "Montserrat",serif;
+    font-size: 20pt;
+    text-align: center;
+    line-height: 2.3;
+}
+.time-div1 {
+    background-color: gray;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div2 {
+    background-color: gray;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div3 {
+    background-color: gray;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div4 {
+    background-color: gray;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div5 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div6 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+    width: 100%;
+}
+.time-div7 {
+    background-color: #b22222;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div8 {
+    background-color: firebrick;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div9 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div10 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div11 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div12 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div13 {
+    background-color: firebrick;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div14 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div15 {
+    background-color: firebrick;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div16 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div17 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div18 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.form {
+    float: right;
+    width: 75%;
+    height: 100%;
+    background-color: black;
+    text-align: center;
+    font-family: "Montserrat",serif;
+    font-size: 20pt;
+}
+.main-form {
+    width: 100%;
+    height: 90%;
+    color: white;
+}
+
+.participant-selection {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: black;
+    font-family: "Montserrat",serif;
+    text-align: center;
+    font-size: 20pt;  
+}
+.participants-title {
+    width: 100%;
+    height: 15%;
+    padding-top: 30px;
+}
+.participants {
+    width: 85%;
+    height: 75%;
+    padding-left: 6%;
+    overflow-y: auto;
+    float: right;
+}
+.selection-buttons {
+    margin-top: 13%;
+    width: 15%;
+    height: 75%;
+    float: left;
+}
+.save-participants {
+    background-color: green;
+    color: white;
+    -webkit-border-radius: 85px;
+    padding: 0px 20px;
+    border-color: green;
+    border-style: solid;
+}
+.p1 , .p1-select , .p2, .p2-select, .p3, .p3-select, .p4, .p4-select, .p5, .p5-select, .p6, .p6-select, .p7, .p7-select {
+    width: 200px;
+    height: 200px;
+    float: left;
+    padding-top: 80px;
+    border-right-color: black;
+    //border-right-style: solid;
+    font-size: 20pt;  
+}
+.p1 {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/roshen.jpg);
+    background-size: 100%;
+}
+.p1-select{
+    background: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/roshen.jpg);
+    background-size: 100%;
+    color: black;
+} 
+.p2 { 
+    background-image: linear-gradient( 
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/shike.jpg); 
+    background-size: 100%;
+}
+/*
+.p2-select {
+    background-image: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/shike.jpg);
+    background-size: 100%;
+    color: black;
+}
+*/
+.p3 {
+   background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/sandra.jpg);
+    background-size: 100%;
+}
+.p3-select {
+    background-image: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/sandra.jpg);
+    background-size: 100%;
+    color: black;
+}
+.p4 {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/calin.jpg);
+    background-size: 100%;
+}
+.p4-select {
+    background: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/calin.jpg);
+    background-size: 100%;
+    color: black;
+}
+.p5 {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/silviu.jpg);
+    background-size: 100%;
+}
+.p5-select {
+    background: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/silviu.jpg);
+    background-size: 100%;
+    color: black;
+}
+.p6 {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/will.jpg);
+    background-size: 100%;
+}
+.p6-select {
+   background: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/will.jpg);
+    background-size: 100%; 
+    color: black;
+}
+.p7 {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/mudit.jpg);
+    background-size: 100%;
+}
+.p7-select {
+    background: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/mudit.jpg);
+    background-size: 100%;
+    color: black;
+}
+.participant-select {
+    
+}
+button {
+    color: black;
+}
+.form-title {
+    color: white;
+    height: 10%;
+    font-size: 30pt;
+    text-align: center;
+    font-family: "Montserrat",serif;
+    border-bottom: 2px solid white;
+}
+.meeting-type {
+    height: 20%;
+    padding-top: 50px;
+    text-align: center;
+}
+.attendees {
+    height: 20%;
+    padding-top: 50px;
+    text-align: left;
+    padding-left: 130px;
+}
+.participants-button {
+    background: white;
+    padding: 10px 30px;
+    border-color: white;
+    border-style: solid;
+  -webkit-border-radius: 96px;
+}
+.book {
+    padding-top: 80px;
+}
+.book-button {
+    background: green;
+    padding: 10px 30px;
+    border-color: green;
+    border-style: solid;
+    color: white;
+  -webkit-border-radius: 96px;
 }
 /*-------------------------
 	The clocks
@@ -56,9 +498,12 @@ span.icon-next {
 
 
 #clock{
-	width: 420px;
-	height: 150px;
-	margin: auto;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;   
+    height: 100%;
+    width: 35%;
+    
 }
 
 #clock:after{
@@ -75,12 +520,14 @@ span.icon-next {
 
 
 #clock .display{
+    
 	text-align:center;
 	padding: 40px 20px 20px;
 	border-radius:6px;
 	position:relative;
 	height: 150px;
-
+   
+    
 }
 
 
@@ -90,8 +537,11 @@ span.icon-next {
 
 
 #clock.light{
-	background-color:transparent;
-	color:#272e38;
+	color:black;
+    background-color: #D11F1F;
+        //#309A1B;
+        //#E73535;
+        //#EE9A49;
 }
 
 /*#clock.light:after{
@@ -99,13 +549,13 @@ span.icon-next {
 }*/
 
 #clock.light .digits div span{
-	background-color:#272e38;
-	border-color:#272e38;	
+	background-color:black;
+	border-color:black;	
 }
 
 #clock.light .digits div.dots:before,
 #clock.light .digits div.dots:after{
-	background-color:#272e38;
+	background-color:black;
 }
 
 #clock.light .alarm{
@@ -366,6 +816,7 @@ span.icon-next {
 	top:10px;
 	left:0;
 	text-align:center;
+    color: white;
 }
 
 
