@@ -220,8 +220,8 @@ function generateInfo(){
     var currentRoom = '#collapse'+currentRoomName;
     var currentRoomInfo = getCurrentRoomInfo();
     var currentRoomAvailability = currentRoomInfo[0];
-    $('#content').append(mainPage);
-    $('#accordion').append(schedule);
+    $('#content').html(mainPage);
+    $('#accordion').html(schedule);
     $(currentRoom).collapse('show');
     if (currentRoomAvailability == "True") {
         $('#Room').removeClass("occupied").addClass("available");
