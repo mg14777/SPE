@@ -1,0 +1,880 @@
+body {
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+.main-page {
+
+
+}
+header {
+    background-color:black;
+    background-image: url(../image/potato_icon.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    color:white;
+    text-align:center;
+    padding:1px;
+    height: 10%;
+    font-size: 3em;
+    font-family: "Quicksand";
+}
+.IMG.potato {
+    display: block;
+    margin-right: auto
+}
+.item {
+    background-color: black;
+//#6534ff;
+//#E6D8B5;
+}
+.panel-group {
+    width: 100%;
+    float: right;
+}
+.panel-heading{
+    color: black ;
+    background-color: firebrick;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.6s;
+//#EAAC64
+}
+/*.panel-heading:hover {
+    background-color: deepskyblue!important;
+//#0241e2;
+    color: white;
+
+}*/
+.panel-title{
+    font-size: 30px;
+    font-family:serif;
+    font-family: "Quicksand";
+    font-weight: bold;
+
+}
+.panel-collapse{
+    background-color: #EAAC64!important;
+}
+.panel-body{
+    font-size: 1.5em;
+    color: white;
+    font-family: "Quicksand";
+    font-weight: bold;
+    text-align: center;
+}
+.carousel-control {
+    position: absolute;
+    background-image: none !important;
+    top:auto;
+    bottom: initial;
+    bottom: 10%;
+    float: left;
+}
+
+span.icon-prev,
+span.icon-next {
+    font-size: 90px !important;
+}
+span.prev{
+    font-size: 0.3em;
+    vertical-align: middle;
+    font-family: "Quicksand";
+    color: white;
+    font-weight: bold;
+}
+span.next{
+    font-size: 0.4em;
+    font-family: "Quicksand";
+    color: white;
+}
+.large-text{
+    font-size: 48px;
+    text-align: center;
+}
+.potato {
+    background-image: url(../image/potato_icon.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin: auto;
+    vertical-align: middle;
+    position:relative;
+    height: 30%;
+}
+#content{
+//margin-top: 50px;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+    height: 80%;//30%;
+    color: white;
+}
+
+#Room {
+    background-color: firebrick;
+	height: 100%;
+    width: 100%;
+    color: white;
+    font-size: 3em;
+    font-family: "Quicksand";
+}
+.meeting {
+    font-size: 1em;
+    font-family: "Quicksand";
+    color: white;
+    margin-top: 2em;
+}
+#state {
+    font-size: 2em;
+    font-family: "Exo";
+    color: white;
+    font-weight: bold;
+}
+.time {
+    font-size: 0.7em;
+}
+#finishTime {
+    font-size: 0.6em;
+}
+.nextTitle {
+    margin-top: 40px;
+    text-align: left;
+    font-size: 1.2em;
+//0.4em;
+    color: black;
+    font-family: "Quicksand";
+}
+.nextBooking {
+    text-align: left;
+    font-size: 1.2em;
+    color: white;
+    font-family: "Quicksand";
+}
+ul li {
+    padding: 4px 0px;
+}
+
+.date {
+    color: white;
+    font-size: 2em;
+    font-family: "Quicksand";
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 2em;
+}
+th,tr,td{
+    border : 1px solid black;
+    text-align: center;
+}
+td{
+    width: 33%;
+}
+.nextAvailable{
+    float: right;
+    color: black;
+    font-size : 20px;
+    vertical-align: middle;
+    line-height: 20px;
+}
+.available {
+    background-color: #42F605!important;
+}
+.occupied {
+    background-color: rgb(245,7,7)!important;
+}
+.btn{
+    margin-top: 1.5em;
+    font-size: 40px;
+    padding: 0.5em 1em;
+    -webkit-box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.85);
+    -moz-box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.85);
+    box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.85);
+}
+
+.flip-clock-wrapper{
+
+}
+.btn {
+    margin-top: 0.5em;
+}
+
+.thirdPage {
+    height: 100%;
+    width: 100%;
+    background-image: url(../image/autumn1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    font-size: 4em;
+    font-family: "Satisfy",serif;
+        //"Cinzel",serif;
+    text-align: center;
+    //font-weight: bold;
+    padding-top: 240px;
+    padding-left: 0px;
+}
+.item {
+    background-color: black;
+    color: white;
+}
+.time-div {
+    float: left;
+    width: 25%;
+    height: 91%;
+    overflow-y: auto;
+    font-family: "Montserrat",serif;
+    font-size: 20pt;
+    text-align: center;
+    line-height: 2.3;
+}
+.time-div1 {
+    background-color: gray;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div2 {
+    background-color: gray;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div3 {
+    background-color: gray;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div4 {
+    background-color: gray;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div5 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div6 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+    width: 100%;
+}
+.time-div7 {
+    background-color: #b22222;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div8 {
+    background-color: firebrick;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div9 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div10 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div11 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div12 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div13 {
+    background-color: firebrick;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div14 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div15 {
+    background-color: firebrick;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div16 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div17 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div18 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.form {
+    float: right;
+    width: 75%;
+    height: 100%;
+    background-color: black;
+    text-align: center;
+    font-family: "Montserrat",serif;
+    font-size: 20pt;
+}
+.main-form {
+    width: 100%;
+    height: 90%;
+    color: white;
+}
+
+.participant-selection {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: black;
+    font-family: "Montserrat",serif;
+    text-align: center;
+    font-size: 20pt;  
+}
+.participants-title {
+    width: 100%;
+    height: 15%;
+    padding-top: 30px;
+}
+.participants {
+    width: 85%;
+    height: 75%;
+    padding-left: 6%;
+    overflow-y: auto;
+    float: right;
+}
+.selection-buttons {
+    margin-top: 13%;
+    width: 15%;
+    height: 75%;
+    float: left;
+}
+.save-participants {
+    background-color: green;
+    color: white;
+    -webkit-border-radius: 85px;
+    padding: 0px 20px;
+    border-color: green;
+    border-style: solid;
+}
+.p1 , .p1-select , .p2, .p2-select, .p3, .p3-select, .p4, .p4-select, .p5, .p5-select, .p6, .p6-select, .p7, .p7-select {
+    width: 200px;
+    height: 200px;
+    float: left;
+    padding-top: 80px;
+    border-right-color: black;
+    //border-right-style: solid;
+    font-size: 20pt;  
+}
+.p1 {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/roshen.jpg);
+    background-size: 100%;
+}
+.p1-select{
+    background: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/roshen.jpg);
+    background-size: 100%;
+    color: black;
+} 
+.p2 { 
+    background-image: linear-gradient( 
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/shike.jpg); 
+    background-size: 100%;
+}
+/*
+.p2-select {
+    background-image: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/shike.jpg);
+    background-size: 100%;
+    color: black;
+}
+*/
+.p3 {
+   background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/sandra.jpg);
+    background-size: 100%;
+}
+.p3-select {
+    background-image: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/sandra.jpg);
+    background-size: 100%;
+    color: black;
+}
+.p4 {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/calin.jpg);
+    background-size: 100%;
+}
+.p4-select {
+    background: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/calin.jpg);
+    background-size: 100%;
+    color: black;
+}
+.p5 {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/silviu.jpg);
+    background-size: 100%;
+}
+.p5-select {
+    background: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/silviu.jpg);
+    background-size: 100%;
+    color: black;
+}
+.p6 {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/will.jpg);
+    background-size: 100%;
+}
+.p6-select {
+   background: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/will.jpg);
+    background-size: 100%; 
+    color: black;
+}
+.p7 {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(../image/mudit.jpg);
+    background-size: 100%;
+}
+.p7-select {
+    background: linear-gradient(
+      rgba(0, 255, 0, 0.5), 
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/mudit.jpg);
+    background-size: 100%;
+    color: black;
+}
+.participant-select {
+    
+}
+button {
+    color: black;
+}
+.form-title {
+    color: white;
+    height: 10%;
+    font-size: 30pt;
+    text-align: center;
+    font-family: "Montserrat",serif;
+    border-bottom: 2px solid white;
+}
+.meeting-type {
+    height: 20%;
+    padding-top: 50px;
+    text-align: center;
+}
+.attendees {
+    height: 20%;
+    padding-top: 50px;
+    text-align: left;
+    padding-left: 130px;
+}
+.participants-button {
+    background: white;
+    padding: 10px 30px;
+    border-color: white;
+    border-style: solid;
+  -webkit-border-radius: 96px;
+}
+.book {
+    padding-top: 80px;
+}
+.book-button {
+    background: green;
+    padding: 10px 30px;
+    border-color: green;
+    border-style: solid;
+    color: white;
+  -webkit-border-radius: 96px;
+}
+/*-------------------------
+	The clocks
+--------------------------*/
+
+
+#clock{
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;   
+    height: 100%;
+    width: 35%;
+    
+}
+
+#clock:after{
+	content:'';
+	position:absolute;
+	width:420px;
+	height:150px;
+	border-radius:100%;
+	margin-left:-200px;
+	bottom:2px;
+	z-index:-1;
+
+}
+
+
+#clock .display{
+    
+	text-align:center;
+	padding: 40px 20px 20px;
+	border-radius:6px;
+	position:relative;
+	height: 150px;
+   
+    
+}
+
+
+/*-------------------------
+	Light color theme
+--------------------------*/
+
+
+#clock.light{
+	color:black;
+    background-color: #D11F1F;
+        //#309A1B;
+        //#E73535;
+        //#EE9A49;
+}
+
+/*#clock.light:after{
+	box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}*/
+
+#clock.light .digits div span{
+	background-color:black;
+	border-color:black;	
+}
+
+#clock.light .digits div.dots:before,
+#clock.light .digits div.dots:after{
+	background-color:black;
+}
+
+#clock.light .alarm{
+	background:url('../img/alarm_light.jpg');
+}
+
+#clock.light .display{
+	background-color: transparent;
+	/*box-shadow:0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px #fafafa;*/
+}
+
+
+/*-------------------------
+	Dark color theme
+--------------------------*/
+
+
+#clock.dark{
+	background-color:#272e38;
+	color:#cacaca;
+}
+
+#clock.dark:after{
+	box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+#clock.dark .digits div span{
+	background-color:#cacaca;
+	border-color:#cacaca;	
+}
+
+#clock.dark .alarm{
+	background:url('../img/alarm_dark.jpg');
+}
+
+#clock.dark .display{
+	background-color:#0f1620;
+	box-shadow:0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px #2d3642;
+}
+
+#clock.dark .digits div.dots:before,
+#clock.dark .digits div.dots:after{
+	background-color:#cacaca;
+}
+
+
+/*-------------------------
+	The Digits
+--------------------------*/
+
+
+#clock .digits div{
+	text-align:left;
+	position:relative;
+	width: 28px;
+	height:50px;
+	display:inline-block;
+	margin:0 4px;
+}
+
+#clock .digits div span{
+	opacity:0;
+	position:absolute;
+
+	-webkit-transition:0.25s;
+	-moz-transition:0.25s;
+	transition:0.25s;
+}
+
+#clock .digits div span:before,
+#clock .digits div span:after{
+	content:'';
+	position:absolute;
+	width:0;
+	height:0;
+	border:5px solid transparent;
+}
+
+#clock .digits .d1{			height:5px;width:16px;top:0;left:6px;}
+#clock .digits .d1:before{	border-width:0 5px 5px 0;border-right-color:inherit;left:-5px;}
+#clock .digits .d1:after{	border-width:0 0 5px 5px;border-left-color:inherit;right:-5px;}
+
+#clock .digits .d2{			height:5px;width:16px;top:24px;left:6px;}
+#clock .digits .d2:before{	border-width:3px 4px 2px;border-right-color:inherit;left:-8px;}
+#clock .digits .d2:after{	border-width:3px 4px 2px;border-left-color:inherit;right:-8px;}
+
+#clock .digits .d3{			height:5px;width:16px;top:48px;left:6px;}
+#clock .digits .d3:before{	border-width:5px 5px 0 0;border-right-color:inherit;left:-5px;}
+#clock .digits .d3:after{	border-width:5px 0 0 5px;border-left-color:inherit;right:-5px;}
+
+#clock .digits .d4{			width:5px;height:14px;top:7px;left:0;}
+#clock .digits .d4:before{	border-width:0 5px 5px 0;border-bottom-color:inherit;top:-5px;}
+#clock .digits .d4:after{	border-width:0 0 5px 5px;border-left-color:inherit;bottom:-5px;}
+
+#clock .digits .d5{			width:5px;height:14px;top:7px;right:0;}
+#clock .digits .d5:before{	border-width:0 0 5px 5px;border-bottom-color:inherit;top:-5px;}
+#clock .digits .d5:after{	border-width:5px 0 0 5px;border-top-color:inherit;bottom:-5px;}
+
+#clock .digits .d6{			width:5px;height:14px;top:32px;left:0;}
+#clock .digits .d6:before{	border-width:0 5px 5px 0;border-bottom-color:inherit;top:-5px;}
+#clock .digits .d6:after{	border-width:0 0 5px 5px;border-left-color:inherit;bottom:-5px;}
+
+#clock .digits .d7{			width:5px;height:14px;top:32px;right:0;}
+#clock .digits .d7:before{	border-width:0 0 5px 5px;border-bottom-color:inherit;top:-5px;}
+#clock .digits .d7:after{	border-width:5px 0 0 5px;border-top-color:inherit;bottom:-5px;}
+
+
+/* 1 */
+
+#clock .digits div.one .d5,
+#clock .digits div.one .d7{
+	opacity:1;
+}
+
+/* 2 */
+
+#clock .digits div.two .d1,
+#clock .digits div.two .d5,
+#clock .digits div.two .d2,
+#clock .digits div.two .d6,
+#clock .digits div.two .d3{
+	opacity:1;
+}
+
+/* 3 */
+
+#clock .digits div.three .d1,
+#clock .digits div.three .d5,
+#clock .digits div.three .d2,
+#clock .digits div.three .d7,
+#clock .digits div.three .d3{
+	opacity:1;
+}
+
+/* 4 */
+
+#clock .digits div.four .d5,
+#clock .digits div.four .d2,
+#clock .digits div.four .d4,
+#clock .digits div.four .d7{
+	opacity:1;
+}
+
+/* 5 */
+
+#clock .digits div.five .d1,
+#clock .digits div.five .d2,
+#clock .digits div.five .d4,
+#clock .digits div.five .d3,
+#clock .digits div.five .d7{
+	opacity:1;
+}
+
+/* 6 */
+
+#clock .digits div.six .d1,
+#clock .digits div.six .d2,
+#clock .digits div.six .d4,
+#clock .digits div.six .d3,
+#clock .digits div.six .d6,
+#clock .digits div.six .d7{
+	opacity:1;
+}
+
+
+/* 7 */
+
+#clock .digits div.seven .d1,
+#clock .digits div.seven .d5,
+#clock .digits div.seven .d7{
+	opacity:1;
+}
+
+/* 8 */
+
+#clock .digits div.eight .d1,
+#clock .digits div.eight .d2,
+#clock .digits div.eight .d3,
+#clock .digits div.eight .d4,
+#clock .digits div.eight .d5,
+#clock .digits div.eight .d6,
+#clock .digits div.eight .d7{
+	opacity:1;
+}
+
+/* 9 */
+
+#clock .digits div.nine .d1,
+#clock .digits div.nine .d2,
+#clock .digits div.nine .d3,
+#clock .digits div.nine .d4,
+#clock .digits div.nine .d5,
+#clock .digits div.nine .d7{
+	opacity:1;
+}
+
+/* 0 */
+
+#clock .digits div.zero .d1,
+#clock .digits div.zero .d3,
+#clock .digits div.zero .d4,
+#clock .digits div.zero .d5,
+#clock .digits div.zero .d6,
+#clock .digits div.zero .d7{
+	opacity:1;
+}
+
+
+/* The dots */
+
+#clock .digits div.dots{
+	width:5px;
+}
+
+#clock .digits div.dots:before,
+#clock .digits div.dots:after{
+	width:5px;
+	height:5px;
+	content:'';
+	position:absolute;
+	left:0;
+	top:14px;
+}
+
+#clock .digits div.dots:after{
+	top:34px;
+}
+
+
+/*-------------------------
+	The Alarm
+--------------------------*/
+
+
+#clock .alarm{
+	width:16px;
+	height:16px;
+	bottom:20px;
+	background:url('../img/alarm_light.jpg');
+	position:absolute;
+	opacity:0.2;
+}
+
+#clock .alarm.active{
+	opacity:1;
+}
+
+
+/*-------------------------
+	Weekdays
+--------------------------*/
+
+
+#clock .weekdays{
+	font-size:12px;
+	position:absolute;
+	width:100%;
+	top:10px;
+	left:0;
+	text-align:center;
+    color: white;
+}
+
+
+#clock .weekdays span{
+	opacity:0.2;
+	padding:0 10px;
+}
+
+#clock .weekdays span.active{
+	opacity:1;
+}
+
+
+/*-------------------------
+		AM/PM
+--------------------------*/
+
+
+#clock .ampm{
+	position:absolute;
+	bottom:20px;
+	right:20px;
+	font-size:12px;
+}
