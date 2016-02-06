@@ -11,8 +11,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Potato Room Booking System">
+    <meta name="author" content="Game of Codes">
 
     <title>Potato Calendar</title>
     
@@ -48,7 +48,7 @@
             <!-- First interface -->
             <!-- This interface displays the schedule for all meeting rooms-->
             <div id="first" class="item">
-                <header>Potato Calendar</header>
+                <header></header>
                 <div class="panel-group" id="accordion">
 
                 </div>
@@ -60,7 +60,7 @@
                 
                 <!-- Set the second background image using inline CSS below. --> 
 
-                <header>Potato Calendar</header>
+                <header></header>
                 <div id="content">
 
                 </div>       
@@ -114,12 +114,10 @@
         $("#content").on("click", "button",function(event){
             carousel.parent().carousel('next');
         } );
-        $("#accordion").on("click", "button",function(event){
-            carousel.parent().carousel('prev');
-        })
     });
 
     $(document).ready(generateInfo());
+    $("header").html("Room "+currentRoomName);
     </script>
 
 </body>

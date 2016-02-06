@@ -12,7 +12,7 @@ header {
     background-size:contain;
     color:white;
     text-align:center;
-    padding:1px;
+    padding-top: 1%;
     height: 10%;
     font-size: 3em;
     font-family: "Quicksand";
@@ -96,7 +96,6 @@ span.next{
     height: 30%;
 }
 #content{
-//margin-top: 50px;
     vertical-align: middle;
     position: relative;
     text-align: center;
@@ -115,13 +114,25 @@ span.next{
     font-size: 1em;
     font-family: "Quicksand";
     color: white;
-    margin-top: 2em;
 }
-#state {
-    font-size: 2em;
+
+#person{
+    margin-bottom: 0.5em;
+}
+#state_occupied {
+    font-size: 4em;
     font-family: "Exo";
     color: white;
     font-weight: bold;
+    padding-top: 6%;
+}
+#state_available {
+    font-size: 4em;
+    font-family: "Exo";
+    color: white;
+    font-weight: bold;
+    padding-top: 8%;
+    padding-bottom: 8%;
 }
 .time {
     font-size: 0.7em;
@@ -180,7 +191,22 @@ a:hover, a:focus{
 .bookButton{
     float: right;
 }
-
+#bookNowButton{
+    position: relative;
+    padding: 0.5em 1em 0.5em 1em;
+    margin: 0px 10px 10px 0px;
+    border-radius: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 0.8em;
+    color: #FFF;
+    text-decoration: none;
+}
+#clock{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right:auto;
+}
 #third{
     background-image: url("../image/autumn.jpg");
     background-repeat: no-repeat;
