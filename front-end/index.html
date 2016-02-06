@@ -8,6 +8,7 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,7 +70,45 @@
 
             <!-- Third interface-->
             <div id="third" class="item">
+                <div id="form" class="form">
+                    <div class="form-title">Room One</div>
+                    <div id="main-form" class="main-form">
+                        <div class="meeting-type">Meeting Type&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                            <input type="radio" name="meeting" value="client"> Client&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                            <input type="radio" name="meeting" value="client"> Non-Client</div>
+                        <div class="meeting-duration">Duration&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font color="gray">SELECT FREE SLOTS FROM MENU</font></div>
+                        <div class="attendees">
+                            Attendees&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                            <button class="participants-button" onClick="replaceContentInContainer('item','participant-selection')">SELECT</button>
 
+                        </div>
+                        <div class="book">
+                            <button class="book-button">
+                                BOOK
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="time-div">
+                    <div class="time-div1" id="time-div1" onclick="myFunction(this)">9:00 - 9:30</div>
+                    <div class="time-div2" id="time-div2" onclick="myFunction(this)">9:30 - 10:00</div>
+                    <div class="time-div3" id="time-div3" onclick="myFunction(this)">10:00 - 10:30</div>
+                    <div class="time-div4" id="time-div4" onclick="myFunction(this)">10:30 - 11:00</div>
+                    <div class="time-div5" id="time-div5" onclick="myFunction(this)">11:00 - 11:30</div>
+                    <div class="time-div6" id="time-div6" onclick="myFunction(this)">11:30 - 12:00</div>
+                    <div class="time-div7" id="time-div7" onclick="myFunction(this)">12:00 - 12:30</div>
+                    <div class="time-div8" id="time-div8" onclick="myFunction(this)">12:30 - 13:00</div>
+                    <div class="time-div9" id="time-div9" onclick="myFunction(this)">13:00 - 13:30</div>
+                    <div class="time-div10" id="time-div10" onclick="myFunction(this)">13:30 - 14:00</div>
+                    <div class="time-div11" id="time-div11" onclick="myFunction(this)">14:00 - 14:30</div>
+                    <div class="time-div12" id="time-div12" onclick="myFunction(this)">14:30 - 15:00</div>
+                    <div class="time-div13" id="time-div13" onclick="myFunction(this)">15:00 - 15:30</div>
+                    <div class="time-div14" id="time-div14" onclick="myFunction(this)">15:30 - 16:00</div>
+                    <div class="time-div15" id="time-div15" onclick="myFunction(this)">16:00 - 16:30</div>
+                    <div class="time-div16" id="time-div16" onclick="myFunction(this)">16:30 - 17:00</div>
+                    <div class="time-div17" id="time-div17" onclick="myFunction(this)">17:00 - 17:30</div>
+                    <div class="time-div18" id="time-div18" onclick="myFunction(this)">17:30 - 18:00</div>
+                </div>
             </div>
 
         </div>
@@ -96,7 +135,10 @@
     <script src="js/jquery.swipe.js"></script>
     <!-- Script to implement the count-down clock at the front page-->
     <script src="js/flipclock.js"></script>
+    <script type="text/javascript" src="js/participant-form.js"></script>
+    <script type="text/javascript" src="js/time-slots.js"></script>
     <script src="js/display.js"></script>
+
     <script>
     $('.carousel').carousel({
         pause: true,
