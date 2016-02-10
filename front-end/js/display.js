@@ -213,8 +213,7 @@ function displayAllRoomSchedule(){
         room = data[a];
         html += header1;
         html += 'data-target = "#collapse'+room.room_name;
-        html += '" id="title_'+room.room_name;
-        html += '"> ';
+        html += '" id="title_'+room.room_name + '">';
         html += header2;
         html += '<a href=\"#collapse'+ room.room_name + '\">Room '+room.room_name+'</a></h4></div>';
         html += '<div id="collapse'+room.room_name+'" class="panel-collapse collapse">';

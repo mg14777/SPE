@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
-
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,7 +78,7 @@
                         <div class="meeting-duration">Duration&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font color="gray">SELECT FREE SLOTS FROM MENU</font></div>
                         <div class="attendees">
                             Attendees&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                            <button class="participants-button" onClick="replaceContentInContainer('item','participant-selection')">SELECT</button>
+                            <button class="participants-button" onClick="replaceContentInContainer('third','participant-selection')">SELECT</button>
 
                         </div>
                         <div class="book">
@@ -110,19 +109,51 @@
                     <div class="time-div18" id="time-div18" onclick="myFunction(this)">17:30 - 18:00</div>
                 </div>
             </div>
-
+            <div id="participant-selection" class="participant-selection" style="display:none">
+                <div class="participants-title">
+                    SELECT ATTENDEES
+                </div>
+                <div class="selection-buttons">
+                    <button class="save-participants" onclick="backToMainForm('third','participant-selection')">
+                        SAVE
+                    </button>
+                </div>
+                <div class="participants">
+                    <div class="p1" id="p1" onclick="changeClass(this)">
+                        Roshen
+                    </div>
+                    <div class="p2" id="p2" onclick="toGreenTint(this)">
+                        Robert
+                    </div>
+                    <div class="p3" onclick="changeClass(this)">
+                        Sandra
+                    </div>
+                    <div class="p4" onclick="changeClass(this)">
+                        Calin
+                    </div>
+                    <div class="p5" onclick="changeClass(this)">
+                        Silviu
+                    </div>
+                    <div class="p6" onclick="changeClass(this)">
+                        Will
+                    </div>
+                    <div class="p7" onclick="changeClass(this)">
+                    Mudit
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
         <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev" role="button">
+       <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev" role="button">
             <span class="icon-prev"><span class="prev"></span></span>
         </a>
         
         <a class="right carousel-control" href="#myCarousel" data-slide="next" role="button">
             
             <span class="icon-next" style="float:left"></span>
-        </a>
+        </a> -->
 
 
     <!-- jQuery -->
