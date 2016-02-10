@@ -2,32 +2,42 @@
  * Created by Shike Feng on 07-Dec-15.
  */
 
+/*
+       This file is used to store the JSON string received from the backend.
+       Some 'decoding' functions to get the needed information for the front-end
+       and generate HTML code dynamically.
 
-    /*
-    This is just an example JSON string
-     */
+ */
+
+/*
+    The name of the meeting room will be hard-coded.
+*/
 var currentRoomName = "One";
+
+/*
+    Here is an example JSON string
+ */
 var data = [
         {
             "room_name": "One",
             "meetings": [
                 {
                     "organizer": "Robert",
-                    "start_time": "10:00",
+                    "start_time": "0:00",
                     "end_time": "12:00",
-                    "meeting_level": "First"
+                    "meetingType": "Client Meeting"
                 },
                 {
                     "organizer": "Mudit",
                     "start_time": "12:00",
                     "end_time": "12:30",
-                    "meeting_level": "First"
+                    "meetingType": "Non-Client Meeting"
                 },
                 {
                     "organizer": "Robert",
-                    "start_time": "14:30",
-                    "end_time": "18:00",
-                    "meeting_level": "Second"
+                    "start_time": "13:30",
+                    "end_time": "23:59",
+                    "meetingType": "Client Meeting"
                 }
             ]
         },
@@ -38,19 +48,19 @@ var data = [
                     "organizer": "Robert",
                     "start_time": "11:00",
                     "end_time": "12:00",
-                    "meeting_level": "Second"
+                    "meetingType": "Non-Client Meeting"
                 },
                 {
                     "organizer": "Robert",
                     "start_time": "13:00",
                     "end_time": "13:30",
-                    "meeting_level": "First"
+                    "meetingType": "Client Meeting"
                 },
                 {
                     "organizer": "Robert",
-                    "start_time": "15:30",
+                    "start_time": "13:30",
                     "end_time": "18:00",
-                    "meeting_level": "Second"
+                    "meetingType": "Non-Client Meeting"
                 }
             ]
 
@@ -62,19 +72,19 @@ var data = [
                     "organizer": "Mudit",
                     "start_time": "10:00",
                     "end_time": "11:00",
-                    "meeting_level": "Second"
+                    "meetingType": "Non-Client Meeting"
                 },
                 {
                     "organizer": "Robert",
                     "start_time": "12:00",
                     "end_time": "13:30",
-                    "meeting_level": "First"
+                    "meetingType": "Client Meeting"
                 },
                 {
                     "organizer": "Mudit",
                     "start_time": "14:00",
                     "end_time": "15:00",
-                    "meeting_level": "Second"
+                    "meetingType": "Non-Client Meeting"
                 }
             ]
         },
@@ -85,30 +95,35 @@ var data = [
                     "organizer": "Robert",
                     "start_time": "10:00",
                     "end_time": "11:00",
-                    "meeting_level": "Second"
+                    "meetingType": "Non-Client Meeting"
                 },
                 {
                     "organizer": "Robert",
                     "start_time": "12:00",
                     "end_time": "13:30",
-                    "meeting_level": "First"
+                    "meetingType": "Non-Client Meeting"
                 },
                 {
                     "organizer": "Mudit",
                     "start_time": "14:00",
                     "end_time": "15:00",
-                    "meeting_level": "Second"
+                    "meetingType": "Non-Client Meeting"
                 }
             ]
         }
     ];
 
-/*
- This function is used to get the availability state for the current room
- */
 function setData(data){
     this.data = data
 }
+
+function getData(){
+    return data
+}
+
+/*
+    According to the name of the room, find its index in the received JSON string
+ */
 function getRoom(roomName){
     var index = null;
     for (var i = 0; i<data.length; i++){
@@ -120,6 +135,11 @@ function getRoom(roomName){
     return index;
 }
 
+/*
+    Get the necessary information for a specific room
+    Take a room's index as the parameter
+    Returns an object containing four fields. Namely: availability, organizer, meetingType and the Length of the meeting
+ */
 function getRoomInformation(roomIndex){
     var time = new Date();
     var hour = time.getHours();
@@ -131,32 +151,39 @@ function getRoomInformation(roomIndex){
     var end = null;
     var endTime = [];
     var info = [];
-    info[0] = "True";
+    info.availability = "True";
     for (var i = 0; i < data[roomIndex].meetings.length; i++){
         startTime = data[roomIndex].meetings[i].start_time.split(":");
         endTime = data[roomIndex].meetings[i].end_time.split(":");
         start = startTime[0]*60*60 + startTime[1]*60;
         end = endTime[0]*60*60 + endTime[1]*60;
         if (now < end && now > start){
-            info[0] = "False";
-            info[1] = data[roomIndex].meetings[i].organizer;
-            info[2] = data[roomIndex].meetings[i].meeting_level;
-            info[3] = end - now;
+            info.availability = "False";
+            info.organizer = data[roomIndex].meetings[i].organizer;
+            info.meetingType = data[roomIndex].meetings[i].meetingType;
+            info.meetingLength = end - now;
             break;
         }
     }
     return info;
 }
 
+/*
+    Get the information for the current meeting room
+ */
 function getCurrentRoomInfo(){
     var roomIndex = getRoom(currentRoomName);
     return getRoomInformation(roomIndex);
 }
 
-// Display the schedule table
+/*
+    Generate the schedule table for a room dynamically
+    Take a room's information JSON string as a parameter
+    Returns a string of HTML code.
+ */
 function generateScheduleTable(room) {
     var meetings = room.meetings;
-    var tableHeader = "<table><th>Time</th><th>Level</th><th>Organizer</th>";
+    var tableHeader = "<table><th>Time</th><th>Meeting Type</th><th>Organizer</th>";
     var tableEnd = "</table>";
     var row;
 
@@ -164,7 +191,7 @@ function generateScheduleTable(room) {
     for (var i = 0; i< meetings.length; i++){
         row = "<tr>";
         row += "<td>"+meetings[i].start_time + " ~ " + meetings[i].end_time+"</td>";
-        row +="<td>"+meetings[i].meeting_level + "</td>";
+        row +="<td>"+meetings[i].meetingType + "</td>";
         row +="<td>"+meetings[i].organizer + "</td>";
         html+=row;
     }
@@ -172,65 +199,70 @@ function generateScheduleTable(room) {
     return html;
 }
 
-function displayAllRoomSchedule(data){
-    var header1 = '<div class=\"panel panel-default\"><div class=\"panel-heading customise\"';
-    var header2 = ' class="panel-title"><a data-toggle="collapse" data-parent="#accordion" ';
+/*
+    Generate the full schedule for all rooms.
+    Returns a string of HTML codes for the collapse on the first page of the carousel
+ */
+function displayAllRoomSchedule(){
+    var data = getData();
+    var header1 = '<div class=\"panel panel-default\"><div class=\"panel-heading customise\" data-toggle="collapse" data-parent="#accordion"';
+    var header2 = '<h4 class="panel-title">';
     var room;
     var html = "";
     for (var a = 0; a< data.length; a++ ){
         room = data[a];
         html += header1;
-        html += ' id="title_'+room.room_name;
-        html += '"><h4 ';
+        html += 'data-target = "#collapse'+room.room_name;
+        html += '" id="title_'+room.room_name + '">';
         html += header2;
-        html += 'href="#collapse'+room.room_name+'">Room '+room.room_name+'</a><div id="next' + room.room_name+ '" class="nextAvailable"></div></h4></div>';
+        html += '<a href=\"#collapse'+ room.room_name + '\">Room '+room.room_name+'</a></h4></div>';
         html += '<div id="collapse'+room.room_name+'" class="panel-collapse collapse">';
-
         html += generateScheduleTable(room);
         html += '</div>';
     }
     return html;
 }
 
+/*
+    Generate the code for the main page dynamically
+ */
 function mainPageInfo(){
     var roomIndex = getRoom(currentRoomName);
     var roomInfo = getRoomInformation(roomIndex);
     var html = '<div id="Room">';
     var htmlEnd = '</div>';
-    html += 'ROOM '+currentRoomName;
     html += '<div class="meeting">';
-    if (roomInfo[0] == "False"){
-        html += '<div id="state">BOOKED</div>';
-        html += '<div id="level">Level : '+roomInfo[2]+'</div>';
-        html += '<div id="person">Organizer : '+roomInfo[1]+'</div>';
-        html += '<div id="clock" style="margin:2em;"></div>';
+    if (roomInfo.availability == "False"){
+        html += '<div id="state_occupied">BOOKED</div>';
+        html += '<div id="type">'+roomInfo.meetingType+'</div>';
+        html += '<div id="person">Organizer : '+roomInfo.organizer+'</div>';
+        html += '<div id="clock"></div>';
     } else {
-        html += '<div id="state">AVAILABLE</div>';
-        html += '<div id="clock" style="margin:3em;"></div>';
+        html += '<div id="state_available">AVAILABLE</div>';
     }
         html += htmlEnd;
-        html += '<button type="button" class="btn btn-primary" onclick="window.location.href=\'#third\'">Book Now</button>';
+        html += '<button class="btn btn-primary" id="bookNowButton">Book Now</button>';
         html += htmlEnd;
     return html;
 }
 
+/*
+    This function will be called every time the front end receives information from the backend,
+    render the interface
+ */
 function generateInfo(){
     var mainPage = mainPageInfo(data);
-    var schedule = displayAllRoomSchedule(data);
+    var schedule = displayAllRoomSchedule();
     var currentRoom = '#collapse'+currentRoomName;
     var currentRoomInfo = getCurrentRoomInfo();
-    var currentRoomAvailability = currentRoomInfo[0];
     $('#content').html(mainPage);
     $('#accordion').html(schedule);
     $(currentRoom).collapse('show');
-    if (currentRoomAvailability == "True") {
+    if (currentRoomInfo.availability == "True") {
         $('#Room').removeClass("occupied").addClass("available");
-        var clock = $("#clock").FlipClock({
-            clockFace : 'TwentyFourHourClock'
-        });
     } else {
         $('#Room').removeClass("available").addClass("occupied");
-        clock = $("#clock").FlipClock({
+        var clock = $("#clock").FlipClock({
             clockFace: 'HourlyCounter',
             autoStart: false,
             callbacks: {
@@ -239,15 +271,16 @@ function generateInfo(){
                 }
             }
         });
-        clock.setTime(parseInt(currentRoomInfo[3]));
+        clock.setTime(parseInt(currentRoomInfo.meetingLength));
         clock.setCountdown(true);
         clock.start();
     }
+
     for (var i = 0; i < data.length; i++){
         var roomInfo = getRoomInformation(i);
         var roomName = data[i].room_name;
         var titleName = '#title_'+ roomName;
-        if (roomInfo[0] == "False"){
+        if (roomInfo.availability == "False"){
             $(titleName).removeClass("available").addClass("occupied");
         } else {
             $(titleName).removeClass("occupied").addClass("available");
