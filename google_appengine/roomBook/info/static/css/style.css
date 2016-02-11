@@ -1,0 +1,522 @@
+body {
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+
+header {
+    background-color:black;
+    background-image: url(../image/potato_icon.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    color:white;
+    text-align:center;
+    padding-top: 1%;
+    height: 10%;
+    font-size: 3em;
+    font-family: "Quicksand";
+}
+.IMG.potato {
+    display: block;
+    margin-right: auto
+}
+.item {
+    background-color: black;
+}
+.panel-group {
+    width: 100%;
+    float: right;
+}
+.panel-heading{
+    color: black ;
+    background-color: firebrick;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.6s;
+}
+
+.panel-title{
+    font-size: 30px;
+    font-family:serif;
+    font-family: "Quicksand";
+    font-weight: bold;
+
+}
+.panel-collapse{
+    background-color: #EAAC64!important;
+}
+.panel-body{
+    font-size: 1.5em;
+    color: white;
+    font-family: "Quicksand";
+    font-weight: bold;
+    text-align: center;
+}
+.carousel-control {
+    position: absolute;
+    background-image: none !important;
+    top:auto;
+    bottom: initial;
+    bottom: 10%;
+    float: left;
+}
+
+span.icon-prev,
+span.icon-next {
+    font-size: 90px !important;
+}
+span.prev{
+    font-size: 0.3em;
+    vertical-align: middle;
+    font-family: "Quicksand";
+    color: white;
+    font-weight: bold;
+}
+span.next{
+    font-size: 0.4em;
+    font-family: "Quicksand";
+    color: white;
+}
+.large-text{
+    font-size: 48px;
+    text-align: center;
+}
+.potato {
+    background-image: url(../image/potato_icon.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin: auto;
+    vertical-align: middle;
+    position:relative;
+    height: 30%;
+}
+#content{
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+    height: 80%;
+    color: white;
+}
+
+#Room {
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-size: 3em;
+    font-family: "Quicksand";
+}
+.meeting {
+    font-size: 1em;
+    font-family: "Quicksand";
+    color: white;
+}
+
+#person{
+    margin-bottom: 0.5em;
+}
+#state_occupied {
+    font-size: 4em;
+    font-family: "Exo";
+    color: white;
+    font-weight: bold;
+    padding-top: 6%;
+}
+#state_available {
+    font-size: 4em;
+    font-family: "Exo";
+    color: white;
+    font-weight: bold;
+    padding-top: 8%;
+    padding-bottom: 8%;
+}
+.time {
+    font-size: 0.7em;
+}
+#finishTime {
+    font-size: 0.6em;
+}
+.nextTitle {
+    margin-top: 40px;
+    text-align: left;
+    font-size: 1.2em;
+//0.4em;
+    color: black;
+    font-family: "Quicksand";
+}
+.nextBooking {
+    text-align: left;
+    font-size: 1.2em;
+    color: white;
+    font-family: "Quicksand";
+}
+ul li {
+    padding: 4px 0px;
+}
+
+.date {
+    color: white;
+    font-size: 2em;
+    font-family: "Quicksand";
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 2em;
+}
+th,tr,td{
+    border : 1px solid black;
+    text-align: center;
+}
+td{
+    width: 33%;
+}
+
+.available {
+    background-color: #42F605!important;
+}
+.occupied {
+    background-color: firebrick!important;
+}
+
+a:hover, a:focus{
+    text-decoration: none;
+}
+
+.bookButton{
+    float: right;
+}
+#bookNowButton{
+    position: relative;
+    padding: 0.5em 1em 0.5em 1em;
+    margin: 0px 10px 10px 0px;
+    border-radius: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 0.8em;
+    color: #FFF;
+    text-decoration: none;
+}
+#clock{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right:auto;
+}
+#third{
+   /* background-image: url("../image/autumn.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;*/
+    background-color: black;
+    color: white;
+
+}
+
+.time-div {
+    float: left;
+    width: 25%;
+    height: 91%;
+    overflow-y: auto;
+    font-family: "Montserrat",serif;
+    font-size: 20pt;
+    text-align: center;
+    line-height: 2.3;
+}
+.time-div1 {
+    background-color: gray;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div2 {
+    background-color: gray;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div3 {
+    background-color: gray;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div4 {
+    background-color: gray;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div5 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div6 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+    width: 100%;
+}
+.time-div7 {
+    background-color: #b22222;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div8 {
+    background-color: firebrick;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div9 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div10 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div11 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div12 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div13 {
+    background-color: firebrick;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div14 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div15 {
+    background-color: firebrick;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div16 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div17 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.time-div18 {
+    background-color: green;
+    border-bottom: 2px solid white;
+    height: 10%;
+}
+.form {
+    float: right;
+    width: 75%;
+    height: 100%;
+    background-color: black;
+    text-align: center;
+    font-family: "Montserrat",serif;
+    font-size: 20pt;
+}
+.main-form {
+    width: 100%;
+    height: 90%;
+    color: white;
+}
+
+.participant-selection {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: black;
+    font-family: "Montserrat",serif;
+    text-align: center;
+    font-size: 20pt;
+}
+.participants-title {
+    width: 100%;
+    height: 15%;
+    padding-top: 30px;
+}
+.participants {
+    width: 85%;
+    height: 75%;
+    padding-left: 6%;
+    overflow-y: auto;
+    float: right;
+}
+.selection-buttons {
+    margin-top: 13%;
+    width: 15%;
+    height: 75%;
+    float: left;
+}
+.save-participants {
+    background-color: green;
+    color: white;
+    -webkit-border-radius: 85px;
+    padding: 0px 20px;
+    border-color: green;
+    border-style: solid;
+}
+.p1 , .p1-select , .p2, .p2-select, .p3, .p3-select, .p4, .p4-select, .p5, .p5-select, .p6, .p6-select, .p7, .p7-select {
+    width: 200px;
+    height: 200px;
+    float: left;
+    padding-top: 80px;
+    border-right-color: black;
+//border-right-style: solid;
+    font-size: 20pt;
+}
+.p1 {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ),url(../image/roshen.jpg);
+    background-size: 100%;
+}
+.p1-select{
+    background: linear-gradient(
+            rgba(0, 255, 0, 0.5),
+            rgba(0, 255, 0, 0.5)
+    ),url(../image/roshen.jpg);
+    background-size: 100%;
+    color: black;
+}
+.p2 {
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ),url(../image/shike.jpg);
+    background-size: 100%;
+}
+/*
+.p2-select {
+    background-image: linear-gradient(
+      rgba(0, 255, 0, 0.5),
+      rgba(0, 255, 0, 0.5)
+    ),url(../image/shike.jpg);
+    background-size: 100%;
+    color: black;
+}
+*/
+.p3 {
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ),url(../image/sandra.jpg);
+    background-size: 100%;
+}
+.p3-select {
+    background-image: linear-gradient(
+            rgba(0, 255, 0, 0.5),
+            rgba(0, 255, 0, 0.5)
+    ),url(../image/sandra.jpg);
+    background-size: 100%;
+    color: black;
+}
+.p4 {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ),url(../image/calin.jpg);
+    background-size: 100%;
+}
+.p4-select {
+    background: linear-gradient(
+            rgba(0, 255, 0, 0.5),
+            rgba(0, 255, 0, 0.5)
+    ),url(../image/calin.jpg);
+    background-size: 100%;
+    color: black;
+}
+.p5 {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ),url(../image/silviu.jpg);
+    background-size: 100%;
+}
+.p5-select {
+    background: linear-gradient(
+            rgba(0, 255, 0, 0.5),
+            rgba(0, 255, 0, 0.5)
+    ),url(../image/silviu.jpg);
+    background-size: 100%;
+    color: black;
+}
+.p6 {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ),url(../image/will.jpg);
+    background-size: 100%;
+}
+.p6-select {
+    background: linear-gradient(
+            rgba(0, 255, 0, 0.5),
+            rgba(0, 255, 0, 0.5)
+    ),url(../image/will.jpg);
+    background-size: 100%;
+    color: black;
+}
+.p7 {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ),url(../image/mudit.jpg);
+    background-size: 100%;
+}
+.p7-select {
+    background: linear-gradient(
+            rgba(0, 255, 0, 0.5),
+            rgba(0, 255, 0, 0.5)
+    ),url(../image/mudit.jpg);
+    background-size: 100%;
+    color: black;
+}
+.participant-select {
+
+}
+button {
+    color: black;
+}
+.form-title {
+    color: white;
+    height: 10%;
+    font-size: 30pt;
+    text-align: center;
+    font-family: "Montserrat",serif;
+    border-bottom: 2px solid white;
+}
+.meeting-type {
+    height: 20%;
+    padding-top: 50px;
+    text-align: center;
+}
+.attendees {
+    height: 20%;
+    padding-top: 50px;
+    text-align: left;
+    padding-left: 130px;
+}
+.participants-button {
+    background: white;
+    padding: 10px 30px;
+    border-color: white;
+    border-style: solid;
+    -webkit-border-radius: 96px;
+}
+.book {
+    padding-top: 80px;
+}
+.book-button {
+    background: green;
+    padding: 10px 30px;
+    border-color: green;
+    border-style: solid;
+    color: white;
+    -webkit-border-radius: 96px;
+}

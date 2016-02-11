@@ -1,0 +1,211 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Potato Room Booking System">
+    <meta name="author" content="Game of Codes">
+
+    <title>Potato Calendar</title>
+    
+    
+    <!-- Bootstrap Core CSS -->
+    <!--
+    <link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!-- Custom CSS -->
+    <!--
+    <link href="css/full-slider.css" rel="stylesheet">
+    <link href="css/flipclock.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">-->
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flipclock.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/full-slider.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!-- Full Page Image Background Carousel Header -->
+    <div id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0"></li>
+            <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <!-- First interface -->
+            <!-- This interface displays the schedule for all meeting rooms-->
+            <div id="first" class="item">
+                <header></header>
+                <div class="panel-group" id="accordion">
+
+                </div>
+            </div>
+
+            <!-- Main interface -->
+            <!-- This interface displays the state for current meeting room-->
+            <div class="item active main-page" >
+                
+                <!-- Set the second background image using inline CSS below. --> 
+
+                <header></header>
+                <div id="content">
+
+                </div>       
+            </div>
+
+
+            <!-- Third interface-->
+            <div id="third" class="item">
+                <div id="form" class="form">
+                    <div class="form-title">Room One</div>
+                    <div id="main-form" class="main-form">
+                        <div class="meeting-type">Meeting Type&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                            <input type="radio" name="meeting" value="client"> Client&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                            <input type="radio" name="meeting" value="client"> Non-Client</div>
+                        <div class="meeting-duration">Duration&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font color="gray">SELECT FREE SLOTS FROM MENU</font></div>
+                        <div class="attendees">
+                            Attendees&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                            <button class="participants-button" onClick="replaceContentInContainer('third','participant-selection')">SELECT</button>
+
+                        </div>
+                        <div class="book">
+                            <button class="book-button">
+                                BOOK
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="time-div">
+                    <div class="time-div1" id="time-div1" onclick="myFunction(this)">9:00 - 9:30</div>
+                    <div class="time-div2" id="time-div2" onclick="myFunction(this)">9:30 - 10:00</div>
+                    <div class="time-div3" id="time-div3" onclick="myFunction(this)">10:00 - 10:30</div>
+                    <div class="time-div4" id="time-div4" onclick="myFunction(this)">10:30 - 11:00</div>
+                    <div class="time-div5" id="time-div5" onclick="myFunction(this)">11:00 - 11:30</div>
+                    <div class="time-div6" id="time-div6" onclick="myFunction(this)">11:30 - 12:00</div>
+                    <div class="time-div7" id="time-div7" onclick="myFunction(this)">12:00 - 12:30</div>
+                    <div class="time-div8" id="time-div8" onclick="myFunction(this)">12:30 - 13:00</div>
+                    <div class="time-div9" id="time-div9" onclick="myFunction(this)">13:00 - 13:30</div>
+                    <div class="time-div10" id="time-div10" onclick="myFunction(this)">13:30 - 14:00</div>
+                    <div class="time-div11" id="time-div11" onclick="myFunction(this)">14:00 - 14:30</div>
+                    <div class="time-div12" id="time-div12" onclick="myFunction(this)">14:30 - 15:00</div>
+                    <div class="time-div13" id="time-div13" onclick="myFunction(this)">15:00 - 15:30</div>
+                    <div class="time-div14" id="time-div14" onclick="myFunction(this)">15:30 - 16:00</div>
+                    <div class="time-div15" id="time-div15" onclick="myFunction(this)">16:00 - 16:30</div>
+                    <div class="time-div16" id="time-div16" onclick="myFunction(this)">16:30 - 17:00</div>
+                    <div class="time-div17" id="time-div17" onclick="myFunction(this)">17:00 - 17:30</div>
+                    <div class="time-div18" id="time-div18" onclick="myFunction(this)">17:30 - 18:00</div>
+                </div>
+            </div>
+            <div id="participant-selection" class="participant-selection" style="display:none">
+                <div class="participants-title">
+                    SELECT ATTENDEES
+                </div>
+                <div class="selection-buttons">
+                    <button class="save-participants" onclick="backToMainForm('third','participant-selection')">
+                        SAVE
+                    </button>
+                </div>
+                <div class="participants">
+                    <div class="p1" id="p1" onclick="changeClass(this)">
+                        Roshen
+                    </div>
+                    <div class="p2" id="p2" onclick="toGreenTint(this)">
+                        Robert
+                    </div>
+                    <div class="p3" onclick="changeClass(this)">
+                        Sandra
+                    </div>
+                    <div class="p4" onclick="changeClass(this)">
+                        Calin
+                    </div>
+                    <div class="p5" onclick="changeClass(this)">
+                        Silviu
+                    </div>
+                    <div class="p6" onclick="changeClass(this)">
+                        Will
+                    </div>
+                    <div class="p7" onclick="changeClass(this)">
+                    Mudit
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Controls -->
+       <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev" role="button">
+            <span class="icon-prev"><span class="prev"></span></span>
+        </a>
+        
+        <a class="right carousel-control" href="#myCarousel" data-slide="next" role="button">
+            
+            <span class="icon-next" style="float:left"></span>
+        </a> -->
+
+
+    <!-- jQuery -->
+    <script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+     <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "js/bootstrap.min.js" %}" type="text/javascript"></script>
+    <!-- Script to Activate the Carousel -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+    <!-- Script to implement the swipe functionality-->
+    <script src="{% static "js/jquery.swipe.js" %}" type="text/javascript"></script>
+    <!-- Script to implement the count-down clock at the front page-->
+    <script src="{% static "js/flipclock.js" %} " type="text/javascript"></script>
+    <script type="text/javascript" src="{% static "js/participant-form.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/time-slots.js" %}"></script>
+    <script src="{% static "js/display.js" %}" type="text/javascript"></script>
+
+
+
+    
+    
+    <script>
+    $('.carousel').carousel({
+        pause: true,
+        interval: false //changes the speed
+    });
+    $(document).ready(function() {
+         var carousel = $(".carousel-inner").swipe({
+            swipeLeft: function(event, direction, distance, duration, fingerCount){
+                $(this).parent().carousel('next');
+            },
+            swipeRight: function(event, direction, distance, duration, fingerCount){
+                $(this).parent().carousel('prev');
+            }
+         });
+        $("#content").on("click", "button",function(event){
+            carousel.parent().carousel('next');
+        } );
+    });
+
+    $(document).ready(generateInfo());
+    $("header").html("Room "+currentRoomName);
+    </script>
+
+</body>
+
+</html>
