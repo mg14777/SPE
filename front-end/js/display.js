@@ -220,7 +220,6 @@ function displayAllRoomSchedule(){
         html += generateScheduleTable(room);
         html += '</div>';
     }
-    //html += '<div class="rotateLeft"><div class="arrowLeft bounce"></div></div><div class="left-indicator">Book Room</div>';
     html += '<div class="pointer-container-left"><div class="pointer"><span class="rotateLeft"><span class="arrowLeft bounce"></span></span>Book Room</div></div>';
     html += '<div class="pointer-container-right"><div class="pointer">Go Back<span class="rotateRight"><span class="arrowRight bounce"></span></span></div></div>';
     return html;

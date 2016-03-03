@@ -206,7 +206,12 @@
             carousel.parent().carousel('next');
         } );
     });
-
+    setInterval(function(){
+     if($("#third.active").length >= 1){
+        }else{
+            location.reload();
+        }
+    }, 60000);
     $(document).ready(generateInfo());
     $("header").html("Room "+currentRoomName);
     </script>
