@@ -72,14 +72,28 @@
                 <div id="form" class="form">
                     <div class="form-title">Room One</div>
                     <div id="main-form" class="main-form">
-                        <div class="meeting-type">Meeting Type&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                            <input type="radio" name="meeting" value="client"> Client&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                            <input type="radio" name="meeting" value="client"> Non-Client</div>
-                        <div class="meeting-duration">Duration&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font color="gray">SELECT FREE SLOTS FROM MENU</font></div>
+                        <div class="meeting-type">
+                            <div class="meeting-type-title">Meeting Type</div>
+                                <input type="button" id="non-client" class="non-client" value="Non-Client" onclick="myFunction(this)"></input>
+                             <input type="button" id="client" class="client" value="Client" onclick="myFunction(this)"></input>
+                               <!-- <input type="radio" name="meeting" value="client"> Non-Client-->
+                        </div> 
+                        <div class="meeting-duration">
+                            <div class="meeting-duration-title">
+                                Duration
+                            </div>
+                            <div class="selected-slots">
+                                <font color="gray">SELECT FREE SLOTS FROM                                           MENU</font>
+                            </div>
+                        </div>
                         <div class="attendees">
-                            Attendees&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                            <div class="attendees-title">
+                                Attendees
+                            </div>
+                            <div class="attendees-button">
                             <button class="participants-button" onClick="replaceContentInContainer('third','participant-selection')">SELECT</button>
-
+                            </div>
+                            
                         </div>
                         <div class="book">
                             <button class="book-button">
@@ -107,8 +121,7 @@
                     <div class="time-div16" id="time-div16" onclick="myFunction(this)">16:30 - 17:00</div>
                     <div class="time-div17" id="time-div17" onclick="myFunction(this)">17:00 - 17:30</div>
                     <div class="time-div18" id="time-div18" onclick="myFunction(this)">17:30 - 18:00</div>
-                </div>
-                
+                </div>   
                 <div class="pointer-container-left">
                     <div class="pointer">
                         <span class="arrowLeft"></span>
@@ -123,37 +136,19 @@
                 </div>
             </div>
             <div id="participant-selection" class="participant-selection" style="display:none">
-                <div class="participants-title">
-                    SELECT ATTENDEES
-                </div>
-                <div class="selection-buttons">
-                    <button class="save-participants" onclick="backToMainForm('third','participant-selection')">
-                        SAVE
-                    </button>
-                </div>
-                <div class="participants">
-                    <div class="p1" id="p1" onclick="changeClass(this)">
-                        Roshen
-                    </div>
-                    <div class="p2" id="p2" onclick="toGreenTint(this)">
-                        Robert
-                    </div>
-                    <div class="p3" onclick="changeClass(this)">
-                        Sandra
-                    </div>
-                    <div class="p4" onclick="changeClass(this)">
-                        Calin
-                    </div>
-                    <div class="p5" onclick="changeClass(this)">
-                        Silviu
-                    </div>
-                    <div class="p6" onclick="changeClass(this)">
-                        Will
-                    </div>
-                    <div class="p7" onclick="changeClass(this)">
-                    Mudit
-                    </div>
-                </div>
+                        <div class="participants-title">
+                            SELECT ATTENDEES
+                        </div>
+                        <div class="selection-buttons">
+                            <button class="save-participants" onclick="backToMainForm('third','participant-selection')">
+                                SAVE
+                            </button>
+                        </div>
+                        <div id="participants" class="participants">
+                        <!-- 
+                            Dynamically generated using Javascript
+                        -->
+                        </div>
             </div>
         </div>
     </div>
@@ -180,6 +175,7 @@
     <script src="js/flipclock.js"></script>
     <script type="text/javascript" src="js/participant-form.js"></script>
     <script type="text/javascript" src="js/time-slots.js"></script>
+    <script type="text/javascript" src="js/third-page-decoder.js"></script>
     <script src="js/display.js"></script>
 
     <script>
@@ -207,6 +203,8 @@
         }
     }, 60000);
     $(document).ready(generateInfo());
+    $(document).ready(attendeesInfo());
+    $(document).ready(triggerGray());
     $("header").html("Room "+currentRoomName);
     </script>
 
