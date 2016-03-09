@@ -111,20 +111,14 @@
                 
                 <div class="pointer-container-left">
                     <div class="pointer">
-                        <span class="rotateLeft">
-                            <span class="arrowLeft bounce">
-                            </span>
-                        </span>
-                        Book Room
+                        <span class="arrowLeft"></span>
+                        <span class="leftIndicator">Back</span>
                     </div>
                 </div>
                 <div class="pointer-container-right">
                     <div class="pointer">
-                        See Schedule
-                        <span class="rotateRight">
-                            <span class="arrowRight bounce">
-                            </span>
-                        </span>
+                        <span class="rightIndicator">See Schedule</span>
+                        <span class="arrowRight"></span>
                     </div>
                 </div>
             </div>
@@ -191,7 +185,7 @@
     <script>
     $('.carousel').carousel({
         pause: true,
-        interval: false //changes the speed
+        interval: false //changes the speed 
     });
     $(document).ready(function() {
          var carousel = $(".carousel-inner").swipe({

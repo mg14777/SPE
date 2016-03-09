@@ -24,13 +24,13 @@ var data = [
                 {
                     "organizer": "Robert",
                     "start_time": "0:00",
-                    "end_time": "12:00",
+                    "end_time": "10:00",
                     "meetingType": "Client Meeting"
                 },
                 {
                     "organizer": "Mudit",
-                    "start_time": "12:00",
-                    "end_time": "12:30",
+                    "start_time": "13:00",
+                    "end_time": "13:30",
                     "meetingType": "Non-Client Meeting"
                 },
                 {
@@ -67,7 +67,7 @@ var data = [
         },
         {
             "room_name": "Three",
-            "meetings":[
+            "meetings": [
                 {
                     "organizer": "Mudit",
                     "start_time": "10:00",
@@ -82,7 +82,7 @@ var data = [
                 },
                 {
                     "organizer": "Mudit",
-                    "start_time": "14:00",
+                    "start_time": "13:30",
                     "end_time": "15:00",
                     "meetingType": "Non-Client Meeting"
                 }
@@ -113,18 +113,21 @@ var data = [
         }
     ];
 
-function setData(data){
-    this.data = data
+function setData(data) {
+    this.data = data;
 }
 
-function getData(){
-    return data
+function getData() {
+    return data;
 }
 
+function setCurrentRoom(currentRoomName) {
+    this.currentRoomName = currentRoomName;
+}
 /*
     According to the name of the room, find its index in the received JSON string
  */
-function getRoom(roomName){
+function getRoom(roomName) {
     var index = null;
     for (var i = 0; i<data.length; i++){
         if (roomName == data[i].room_name){
@@ -140,7 +143,7 @@ function getRoom(roomName){
     Take a room's index as the parameter
     Returns an object containing four fields. Namely: availability, organizer, meetingType and the Length of the meeting
  */
-function getRoomInformation(roomIndex){
+function getRoomInformation(roomIndex) {
     var time = new Date();
     var hour = time.getHours();
     var minute = time.getMinutes();
@@ -171,7 +174,7 @@ function getRoomInformation(roomIndex){
 /*
     Get the information for the current meeting room
  */
-function getCurrentRoomInfo(){
+function getCurrentRoomInfo() {
     var roomIndex = getRoom(currentRoomName);
     return getRoomInformation(roomIndex);
 }
@@ -203,7 +206,7 @@ function generateScheduleTable(room) {
     Generate the full schedule for all rooms.
     Returns a string of HTML codes for the collapse on the first page of the carousel
  */
-function displayAllRoomSchedule(){
+function displayAllRoomSchedule() {
     var data = getData();
     var header1 = '<div class=\"panel panel-default\"><div class=\"panel-heading customise\" data-toggle="collapse" data-parent="#accordion"';
     var header2 = '<h4 class="panel-title">';
@@ -220,15 +223,15 @@ function displayAllRoomSchedule(){
         html += generateScheduleTable(room);
         html += '</div>';
     }
-    html += '<div class="pointer-container-left"><div class="pointer"><span class="rotateLeft"><span class="arrowLeft bounce"></span></span>Book Room</div></div>';
-    html += '<div class="pointer-container-right"><div class="pointer">Go Back<span class="rotateRight"><span class="arrowRight bounce"></span></span></div></div>';
+        html += '<div class="pointer-container-left"><div class="pointer"><span class="arrowLeft"></span><span class="leftIndicator">Book Room</span></div></div>';
+        html += '<div class="pointer-container-right"><div class="pointer"><span class="rightIndicator">Back</span><span class="arrowRight"></span></div></div>';
     return html;
 }
 
 /*
     Generate the code for the main page dynamically
  */
-function mainPageInfo(){
+function mainPageInfo() {
     var roomIndex = getRoom(currentRoomName);
     var roomInfo = getRoomInformation(roomIndex);
     var html = '<div id="Room">';
@@ -239,13 +242,15 @@ function mainPageInfo(){
         html += '<div id="type">'+roomInfo.meetingType+'</div>';
         html += '<div id="person">Organizer : '+roomInfo.organizer+'</div>';
         html += '<div id="clock"></div>';
+        $("#content").css("background-color", "firebrick")
     } else {
         html += '<div id="state_available">AVAILABLE</div>';
+        $("#content").css("background-color", "#42F605");
     }
         html += htmlEnd;
         html += '<button class="btn btn-primary" id="bookNowButton">Book Now</button>';
-        html += '<div class="pointer-container-left"><div class="pointer"><span class="rotateLeft"><span class="arrowLeft bounce"></span></span>See Schedule</div></div>';
-        html += '<div class="pointer-container-right"><div class="pointer">Book Room<span class="rotateRight"><span class="arrowRight bounce"></span></span></div></div>';
+        html += '<div class="pointer-container-left"><div class="pointer"><span class="arrowLeft"></span><span class="leftIndicator">See Schedule</span></div></div>';
+        html += '<div class="pointer-container-right"><div class="pointer"><span class="rightIndicator">Book Room</span><span class="arrowRight"></span></div></div>';
     return html;
 }
 
@@ -253,7 +258,7 @@ function mainPageInfo(){
     This function will be called every time the front end receives information from the backend,
     render the interface
  */
-function generateInfo(){
+function generateInfo() {
     var mainPage = mainPageInfo(data);
     var schedule = displayAllRoomSchedule();
     var currentRoom = '#collapse'+currentRoomName;
@@ -279,11 +284,11 @@ function generateInfo(){
         clock.start();
     }
 
-    for (var i = 0; i < data.length; i++){
+    for (var i = 0; i < data.length; i++) {
         var roomInfo = getRoomInformation(i);
         var roomName = data[i].room_name;
         var titleName = '#title_'+ roomName;
-        if (roomInfo.availability == "False"){
+        if (roomInfo.availability == "False") {
             $(titleName).removeClass("available").addClass("occupied");
         } else {
             $(titleName).removeClass("occupied").addClass("available");

@@ -1,6 +1,52 @@
+/*CSS Reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*--------------------------------*/
+
 body {
     font-family: "Segoe UI",Arial,sans-serif;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 header {
@@ -10,9 +56,8 @@ header {
     background-size:contain;
     color:white;
     text-align:center;
-    padding-top: 1%;
-    height: 10%;
-    font-size: 3em;
+    padding: 2rem 0rem;
+    font-size: 2em;
     font-family: "Quicksand";
 }
 .IMG.potato {
@@ -21,7 +66,12 @@ header {
 }
 .item {
     background-color: black;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
 }
+
+/*  CSS for page that display schedule of the day     */
 .panel-group {
     width: 100%;
     float: right;
@@ -36,7 +86,7 @@ header {
 }
 
 .panel-title{
-    font-size: 30px;
+    font-size: 2.5em;
     font-family:serif;
     font-family: "Quicksand";
     font-weight: bold;
@@ -52,6 +102,33 @@ header {
     font-weight: bold;
     text-align: center;
 }
+table{
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 2em;
+}
+th,tr,td{
+    border : 1px solid black;
+    text-align: center;
+}
+
+td{
+    width: 33%;
+}
+
+.available {
+    background-color: #42F605!important;
+}
+.occupied {
+    background-color: firebrick!important;
+}
+
+a:hover, a:focus{
+    text-decoration: none;
+}
+/*---------------*/
+
+/*  CSS for carousel   */
 .carousel-control {
     position: absolute;
     background-image: none !important;
@@ -92,10 +169,11 @@ span.next{
 }
 #content{
     vertical-align: middle;
-    position: relative;
     text-align: center;
-    height: 80%;
     color: white;
+    height:100%;
+    padding-top: 1rem;
+    overflow: hidden;
 }
 
 #Room {
@@ -103,33 +181,64 @@ span.next{
     width: 100%;
     color: white;
     font-size: 3em;
+    margin-top: 1.5rem;
     font-family: "Quicksand";
 }
+
+#type {
+    margin-top: 1.5rem;
+    font-family: "Times New Ronan";
+    font-size: 1.5em
+}
+
+#person{
+    font-family: "Times New Ronan";
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .meeting {
-    font-size: 1em;
     font-family: "Quicksand";
     color: white;
 }
 
-#person{
-    margin-bottom: 0.5em;
-}
 #state_occupied {
     font-size: 4em;
     font-family: "Exo";
     color: white;
     font-weight: bold;
-    padding-top: 6%;
+    margin-top: 1rem;
 }
+
 #state_available {
     font-size: 4em;
     font-family: "Exo";
     color: white;
     font-weight: bold;
-    padding-top: 8%;
-    padding-bottom: 8%;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
 }
-.time {
+
+#bookNowButton{
+    position: relative;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.8rem;
+    font-family: 'Pacifico', cursive;
+    font-size: 0.8em;
+    color: #FFF;
+    text-decoration: none;
+}
+
+#clock{
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right:auto;
+}
+ul li {
+    padding: 4px 0px;
+}
+/*.time {
     font-size: 0.7em;
 }
 #finishTime {
@@ -143,66 +252,192 @@ span.next{
     color: black;
     font-family: "Quicksand";
 }
-.nextBooking {
+/*.nextBooking {
     text-align: left;
     font-size: 1.2em;
     color: white;
     font-family: "Quicksand";
-}
-ul li {
-    padding: 4px 0px;
-}
+}*/
 
-.date {
+
+/*.date {
     color: white;
     font-size: 2em;
     font-family: "Quicksand";
+}*/
+
+
+
+/*CSS for bouncing arrow*/
+.pointer{
+    display: inline-block;
 }
 
-table{
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 2em;
-}
-th,tr,td{
-    border : 1px solid black;
-    text-align: center;
-}
-td{
-    width: 33%;
+.pointer-container-left {
+    color: white;
+    margin-left: 0.6rem;
+    padding: 0 5rem;
+    padding-right: 0rem;
+    bottom: 0.8rem;
+    left: 0;
+    position: fixed;
+    display: inline-block;
 }
 
-.available {
-    background-color: #42F605!important;
-}
-.occupied {
-    background-color: firebrick!important;
+.arrowLeft {
+  background-image: url(../image/left-arrow.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  -moz-animation: bounceLeft 2s infinite;
+  -webkit-animation: bounceLeft 2s infinite;
+  animation: bounceLeft 2s infinite;
+  position: fixed;
+  left: 1.5rem;
+  padding-left: 3rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
 }
 
-a:hover, a:focus{
-    text-decoration: none;
-}
-
-.bookButton{
+.leftIndicator {
     float: right;
+    font-family: "Times New Ronan";
+    font-size: 2.5rem;
+    text-align: left;
 }
-#bookNowButton{
-    position: relative;
-    padding: 0.5em 1em 0.5em 1em;
-    margin: 0px 10px 10px 0px;
-    border-radius: 10px;
-    font-family: 'Pacifico', cursive;
-    font-size: 0.8em;
-    color: #FFF;
-    text-decoration: none;
+.rightIndicator{
+    float: left;
+    font-family: "Times New Ronan";
+    font-size: 2.5rem;
+    text-align: right
 }
 
-#clock{
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: auto;
-    margin-right:auto;
+.pointer-container-right {
+    color: white;
+    margin-right: 0.6rem;
+    padding: 0 5rem;
+    padding-left: 0rem;
+    bottom: 0.8rem;
+    right: 0;
+    position: fixed;
+    display: inline-block;
 }
+.arrowRight {
+  background-image: url(../image/right-arrow.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  -moz-animation: bounceRight 2s infinite;
+  -webkit-animation: bounceRight 2s infinite;
+  animation: bounceRight 2s infinite;
+  position: fixed;
+  right: 1.5rem;
+  padding-right: 3rem;
+  padding-top : 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+
+@-moz-keyframes bounceLeft {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  40% {
+    -moz-transform: translateX(-2rem);
+    transform: translateX(-2rem);
+  }
+  60% {
+    -moz-transform: translateX(-1rem);
+    transform: translateX(-1rem);
+  }
+}
+@-webkit-keyframes bounceLeft {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  40% {
+    -webkit-transform: translateX(-2rem);
+    transform: translateX(-2rem);
+  }
+  60% {
+    -webkit-transform: translateX(-1rem);
+    transform: translateX(-1rem);
+  }
+}
+@keyframes bounceLeft {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  40% {
+    -moz-transform: translateX(-2rem);
+    -ms-transform: translateX(-2rem);
+    -webkit-transform: translateX(-2rem);
+    transform: translateX(-2rem);
+  }
+  60% {
+    -moz-transform: translateX(-1rem);
+    -ms-transform: translateX(-1rem);
+    -webkit-transform: translateX(-1rem);
+    transform: translateX(-1rem);
+  }
+}
+
+@-moz-keyframes bounceRight {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  40% {
+    -moz-transform: translateX(2rem);
+    transform: translateX(2rem);
+  }
+  60% {
+    -moz-transform: translateX(1rem);
+    transform: translateX(1rem);
+  }
+}
+@-webkit-keyframes bounceRight {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  40% {
+    -webkit-transform: translateX(2rem);
+    transform: translateX(2rem);
+  }
+  60% {
+    -webkit-transform: translateX(1rem);
+    transform: translateX(1rem);
+  }
+}
+@keyframes bounceRight {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  40% {
+    -moz-transform: translateX(2rem);
+    -ms-transform: translateX(2rem);
+    -webkit-transform: translateX(2rem);
+    transform: translateX(2rem);
+  }
+  60% {
+    -moz-transform: translateX(1rem);
+    -ms-transform: translateX(1rem);
+    -webkit-transform: translateX(1rem);
+    transform: translateX(1rem);
+  }
+}
+
+
+
+
+/* CSS for the third interface */
 #third{
    /* background-image: url("../image/autumn.jpg");
     background-repeat: no-repeat;
@@ -211,117 +446,6 @@ a:hover, a:focus{
     color: white;
 
 }
-
-.arrowLeft {
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.arrowRight {
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=);
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-left: -0.8em
-}
-.pointer {
-    display: inline-block;
-}
-.pointer span {
-    width: 0;
-    height: 0;
-    padding: 0.4em;
-}
-.bounce {
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
-}
-.pointer-container-left {
-    color: white;
-    text-align: left;
-    padding: 0 2em;
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    margin-bottom: 0.5em;
-}
-.pointer-container-right{
-    color: white;
-    text-align: right;
-    padding: 0 2em;
-    bottom:0;
-    right: 0;
-    position: fixed;
-    margin-bottom: 0.5em;
-}   
-.rotateLeft {
-    transform: rotate(90deg);
-    position: fixed;
-    left: 0.5em;
-}
-
-.rotateRight{
-    transform: rotate(-90deg);
-    position: fixed;
-    right: 0.5em;
-
-}
-
-@-moz-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -moz-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-  60% {
-    -moz-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
-}
-@-webkit-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-  60% {
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
-}
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(-30px);
-    -ms-transform: translateY(-30px);
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-  60% {
-    -moz-transform: translateY(-15px);
-    -ms-transform: translateY(-15px);
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
-}
-
-
-
-
-
-
 
 .time-div {
     float: left;
