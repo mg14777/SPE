@@ -35,8 +35,8 @@ var data = [
                 },
                 {
                     "organizer": "Robert",
-                    "start_time": "13:30",
-                    "end_time": "23:59",
+                    "start_time": "15:00",
+                    "end_time": "18:00",
                     "meetingType": "Client Meeting"
                 }
             ]
@@ -59,7 +59,7 @@ var data = [
                 {
                     "organizer": "Robert",
                     "start_time": "13:30",
-                    "end_time": "18:00",
+                    "end_time": "17:00",
                     "meetingType": "Non-Client Meeting"
                 }
             ]
@@ -242,6 +242,16 @@ function displayAllRoomSchedule() {
     return html;
 }
 
+function resetCollapse(){
+	var currentRoom = '#collapse'+ currentRoomName;
+	$(currentRoom).collapse('show');
+	for (var i = 0; i < data.length; i++ ){
+		if (data[i].room_name !== currentRoomName){
+			var roomName = '#collapse'+data[i].room_name;
+			$(roomName).collapse('hide');
+		}
+	}	
+}
 /*
     Generate the code for the main page dynamically
  */
@@ -265,6 +275,7 @@ function mainPageInfo() {
         html += '<button class="btn btn-primary" id="bookNowButton">Book Now</button>';
         html += '<div class="pointer-container-left"><div class="pointer"><span class="arrowLeft"></span><span class="leftIndicator">See Schedule</span></div></div>';
         html += '<div class="pointer-container-right"><div class="pointer"><span class="rightIndicator">Book Room</span><span class="arrowRight"></span></div></div>';
+	
     return html;
 }
 
@@ -308,4 +319,5 @@ function generateInfo() {
             $(titleName).removeClass("occupied").addClass("available");
         }
     }
+	$("header").html("Room "+currentRoomName);
 }

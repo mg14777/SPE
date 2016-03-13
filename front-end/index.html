@@ -69,8 +69,8 @@
 
             <!-- Third interface-->
             <div id="third" class="item">
+				<div class="form-title">Room One</div>
                 <div id="form" class="form">
-                    <div class="form-title">Room One</div>
                     <div id="main-form" class="main-form">
                         <div class="meeting-type">
                             <div class="meeting-type-title">Meeting Type</div>
@@ -201,13 +201,13 @@
      if($("#first.active").length >= 1){
 		 //location.reload();
 		 $('#myCarousel').carousel(1);
+		 resetCollapse();
      	}
-    }, 6000000);
+    }, 60000);
     $(document).ready(generateInfo());
     $(document).ready(attendeesInfo());
     $(document).ready(triggerGray());
-    $("header").html("Room "+currentRoomName);
-    </script>
+	</script>
 
 </body>
 

@@ -45,7 +45,7 @@ function myFunction(x) {
                         else  {
                             ;    
                         } 
-                         window.alert(selectedTime);
+                         //window.alert(selectedTime);
                     
 }
 var selectedPeople = [];

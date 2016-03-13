@@ -34,6 +34,7 @@ function sendBooking() {
         "description" : description,
          "summary": "Potato meeting"        
     }
-    window.alert(booking.start.dateTime + "     " + booking.end.dateTime + "    " + booking.description + "    " + booking.attendees[1].email);
-
+    //window.alert(booking.start.dateTime + "     " + booking.end.dateTime + "    " + booking.description + "    " + booking.attendees[1].email);
+	window.alert("Your booking has been made");
+	$('#myCarousel').carousel(1);
 }
