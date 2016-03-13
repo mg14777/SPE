@@ -1,3 +1,17 @@
+var selectedTime = [];
+function remove(x,arr) {
+    var i;
+     
+    for(i=0 ; i < arr.length; i++) {
+       
+    
+        if(arr[i].localeCompare(x)) {
+           
+            arr.splice(i,1);
+            break;
+        }
+    }
+}
 function myFunction(x) {
                            
                             //var id = "#" + x;
@@ -9,7 +23,10 @@ function myFunction(x) {
                                 }
                                 else {
                                     x.style.backgroundColor="green";
+                                    
+                                    
                                     x.innerHTML = x.innerHTML.replace(/✓/g,'');
+                                    remove(x.innerHTML,selectedTime);
                                 }
                             }
                         
@@ -20,13 +37,15 @@ function myFunction(x) {
                                 $("#non-client").css("background-color","white");
                              else
                                 $("#client").css("background-color","white");
-                            if(!(elemID === "#client" || elemID === "#non-client"))
-                            x.innerHTML="✓"+" "+" "+" "+x.innerHTML;
+                            if(!(elemID === "#client" || elemID === "#non-client")) {
+                                selectedTime.push(x.innerHTML);
+                                x.innerHTML="✓"+" "+" "+" "+x.innerHTML;
+                            }
                         }
                         else  {
                             ;    
                         } 
-                    
+                         window.alert(selectedTime);
                     
 }
 var selectedPeople = [];

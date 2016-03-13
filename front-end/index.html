@@ -96,7 +96,7 @@
                             
                         </div>
                         <div class="book">
-                            <button class="book-button">
+                            <button class="book-button" onclick="sendBooking()">
                                 BOOK
                             </button>
                         </div>
@@ -176,6 +176,7 @@
     <script type="text/javascript" src="js/participant-form.js"></script>
     <script type="text/javascript" src="js/time-slots.js"></script>
     <script type="text/javascript" src="js/third-page-decoder.js"></script>
+	<script type="text/javascript" src="js/book.js"></script>
     <script src="js/display.js"></script>
 
     <script>
@@ -197,11 +198,11 @@
         } );
     });
     setInterval(function(){
-     if($("#third.active").length >= 1){
-        }else{
-            location.reload();
-        }
-    }, 60000);
+     if($("#first.active").length >= 1){
+		 //location.reload();
+		 $('#myCarousel').carousel(1);
+     	}
+    }, 6000000);
     $(document).ready(generateInfo());
     $(document).ready(attendeesInfo());
     $(document).ready(triggerGray());

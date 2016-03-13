@@ -29,7 +29,7 @@ var data = [
                 },
                 {
                     "organizer": "Mudit",
-                    "start_time": "13:00",
+                    "start_time": "12:00",
                     "end_time": "13:30",
                     "meetingType": "Non-Client Meeting"
                 },
@@ -121,8 +121,22 @@ function getData() {
     return data;
 }
 
-function setCurrentRoom(currentRoomName) {
-    this.currentRoomName = currentRoomName;
+function setCurrentRoom(currentRoomNumber) {
+	switch (currentRoomNumber) {
+		case 1 :
+			currentRoomName = "One";
+			break;
+		case 2 :
+			currentRoomName = "Two";
+			break;
+		case 3 : 
+			currentRoomName = "Three";
+			break;
+		default :
+			currentRoomName = currentRoomNumber;
+			break;
+			
+	}
 }
 /*
     According to the name of the room, find its index in the received JSON string
@@ -218,8 +232,8 @@ function displayAllRoomSchedule() {
         html += 'data-target = "#collapse'+room.room_name;
         html += '" id="title_'+room.room_name + '">';
         html += header2;
-        html += '<a href=\"#collapse'+ room.room_name + '\">Room '+room.room_name+'</a></h4></div>';
-        html += '<div id="collapse'+room.room_name+'" class="panel-collapse collapse">';
+        html += '<a href=\"#collapse' + room.room_name + '\">Room '+room.room_name+'</a></h4></div>';
+        html += '<div id="collapse' + room.room_name +'" class="panel-collapse collapse">';
         html += generateScheduleTable(room);
         html += '</div>';
     }
@@ -266,7 +280,7 @@ function generateInfo() {
     $('#content').html(mainPage);
     $('#accordion').html(schedule);
     $(currentRoom).collapse('show');
-    if (currentRoomInfo.availability == "True") {
+    if (currentRoomInfo.availability === "True") {
         $('#Room').removeClass("occupied").addClass("available");
     } else {
         $('#Room').removeClass("available").addClass("occupied");
