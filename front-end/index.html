@@ -193,17 +193,16 @@
                 $(this).parent().carousel('prev');
             }
          });
+		
+		$(".carousel").on('slid.bs.carousel', function () {
+        	checkOnFirstPage();
+    	});
+		
         $("#content").on("click", "button",function(event){
             carousel.parent().carousel('next');
         } );
     });
-    setInterval(function(){
-     if($("#first.active").length >= 1){
-		 //location.reload();
-		 $('#myCarousel').carousel(1);
-		 resetCollapse();
-     	}
-    }, 60000);
+				
     $(document).ready(generateInfo());
     $(document).ready(attendeesInfo());
     $(document).ready(triggerGray());

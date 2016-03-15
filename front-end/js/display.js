@@ -252,6 +252,19 @@ function resetCollapse(){
 		}
 	}	
 }
+
+var timer;
+function checkOnFirstPage(){
+	console.log("first page check");
+	if($("#first.active").length >= 1){
+		clearTimeout(timer);
+		timer = setTimeout(function(){
+			$('#myCarousel').carousel(1);
+		 	resetCollapse();
+		}, 6000)
+				
+	}
+}
 /*
     Generate the code for the main page dynamically
  */
